@@ -10,16 +10,16 @@ interface Props {
 }
 
 const defaultSections: SectionItem[] = [
-	{ id: "sec-1", num: "1", title: "Definición del Problema y Justificación TI" },
-	{ id: "sec-2", num: "2", title: "Objetivos del Proyecto y Alcance" },
-	{ id: "sec-3", num: "3", title: "Estudio de Mercado y Análisis de Demanda" },
-	{ id: "sec-4", num: "4", title: "Estudio Técnico y Arquitectura de la Solución" },
-	{ id: "sec-5", num: "5", title: "Estudio Legal, Organizacional y Equipo TI" },
-	{ id: "sec-6", num: "6", title: "Presupuesto (CAPEX y OPEX)" },
-	{ id: "sec-7", num: "7", title: "Evaluación Económica y Financiera (VAN, TIR, Payback)" },
-	{ id: "sec-8", num: "8", title: "Gestión de Riesgos y Plan de Contingencia" },
-	{ id: "sec-9", num: "9", title: "Conclusiones y Dictamen de Viabilidad" },
-	{ id: "anexos", num: "10", title: "Anexos y Evidencias" },
+	{ id: "sec-info", num: "1", title: "Perfil Institucional de Coval Servicios Financieros" },
+	{ id: "sec-eef", num: "2", title: "2.2.1.1 Factores Ambientales Internos (EEF)" },
+	{ id: "sec-cultura", num: "2.1", title: "Cultura, Estructura y Gobernanza Organizacional" },
+	{ id: "sec-distribucion", num: "2.2", title: "Distribución Geográfica de Instalaciones y Recursos" },
+	{ id: "sec-infraestructura", num: "2.3", title: "Infraestructura Física y Redes (Punto Crítico)" },
+	{ id: "sec-sistemas", num: "2.4", title: "Sistemas de Tecnología de la Información (TI)" },
+	{ id: "sec-recursos", num: "2.5", title: "Disponibilidad de Recursos y Ventanas Operativas" },
+	{ id: "sec-personal", num: "2.6", title: "Capacidad y Competencias del Personal TI" },
+	{ id: "sec-financiera", num: "2.7", title: "Capacidad Financiera y Justificación de Inversión" },
+	{ id: "sec-proyecto", num: "3", title: "Alcance del Proyecto ISO/IEC 27001:2022" },
 ];
 
 const { sections = defaultSections } = Astro.props;
@@ -27,8 +27,8 @@ const { sections = defaultSections } = Astro.props;
 
 <nav id="indice" class="my-8 p-5 bg-neutral-50 rounded-lg border border-neutral-200 text-neutral-800">
 	<div class="flex items-center justify-between mb-3 pb-2 border-b border-neutral-200">
-		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-600">Estructura del Proyecto TI</span>
-		<span class="text-xs text-neutral-400">{sections.length} Módulos</span>
+		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-600">Índice del Proyecto TI</span>
+		<span class="text-xs text-neutral-400">{sections.length} Secciones</span>
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-xs">
 		{sections.map((s) => (
@@ -36,7 +36,7 @@ const { sections = defaultSections } = Astro.props;
 				href={`#${s.id}`}
 				class="text-neutral-600 hover:text-neutral-950 py-1 transition-colors flex items-baseline gap-2 group"
 			>
-				<span class="text-neutral-400 group-hover:text-neutral-700 w-5 shrink-0 text-right font-mono">{s.num}.</span>
+				<span class="text-neutral-400 group-hover:text-neutral-700 w-7 shrink-0 text-right font-mono">{s.num}.</span>
 				<span class="truncate hover:underline underline-offset-2">{s.title}</span>
 			</a>
 		))}
