@@ -117,6 +117,52 @@ import StakeholderTable from '../components/StakeholderTable.astro';
 					<p class="text-xs sm:text-sm text-neutral-600">
 						Esta condición representa una <strong>no conformidad directa</strong> respecto a los controles <strong>A.7.1 (Perímetro físico de seguridad)</strong> y <strong>A.7.2 (Entrada física)</strong> del Anexo A de la norma <strong>ISO/IEC 27001:2022</strong>, comprometiendo la integridad de la red local y generando un riesgo operacional frente a los estándares del holding.
 					</p>
+
+					<!-- Evidencias Fotográficas del Levantamiento Técnico -->
+					<div class="my-6 rounded-xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs">
+						<div class="flex items-center justify-between mb-4 pb-2 border-b border-neutral-100">
+							<span class="text-xs font-semibold text-neutral-900">
+								Evidencias Fotográficas del Levantamiento Técnico (Sede San Isidro)
+							</span>
+							<span class="text-[11px] text-neutral-400 font-mono">
+								Juicio de Expertos
+							</span>
+						</div>
+
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+							<!-- Foto 1: Puerta de acceso -->
+							<figure class="space-y-2">
+								<div class="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 h-80 sm:h-96 flex items-center justify-center">
+									<img 
+										src="/evidencias/puerta-acceso-comunicaciones.png" 
+										alt="Puerta de acceso al cuarto de comunicaciones en Coval Perú" 
+										class="w-full h-full object-cover hover:scale-102 transition-transform duration-200"
+										loading="lazy"
+									/>
+								</div>
+								<figcaption class="text-xs text-neutral-600 leading-relaxed">
+									<strong class="text-neutral-900 block font-medium">Figura 1: Puerta de acceso al cuarto de datos</strong>
+									Puerta con cerradura manual simple y señalética informativa. Se evidencia la <em>ausencia de control biométrico (huellero)</em> y de cámara de videovigilancia CCTV en el pasillo.
+								</figcaption>
+							</figure>
+
+							<!-- Foto 2: Rack abierto -->
+							<figure class="space-y-2">
+								<div class="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 h-80 sm:h-96 flex items-center justify-center">
+									<img 
+										src="/evidencias/rack-abierto-comunicaciones.png" 
+										alt="Rack abierto de comunicaciones y switches en Coval Perú" 
+										class="w-full h-full object-cover hover:scale-102 transition-transform duration-200"
+										loading="lazy"
+									/>
+								</div>
+								<figcaption class="text-xs text-neutral-600 leading-relaxed">
+									<strong class="text-neutral-900 block font-medium">Figura 2: Bastidor abierto de comunicaciones</strong>
+									Switches de distribución (Aruba Instant On), patch panels y cableado estructurado en bastidor abierto sin paneles laterales ni puerta con cerradura.
+								</figcaption>
+							</figure>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
