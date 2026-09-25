@@ -1,6 +1,8 @@
-# Uni 2
+# Formulación y Evaluación de Proyectos TI
 
-Proyecto base para blog y documentación, basado en Astro + Tailwind CSS v4.
+Diagnóstico de Brechas (Gap Analysis) y Plan de Adecuación de Infraestructura y Controles Críticos bajo ISO/IEC 27001:2022 para **Coval Servicios Financieros (Sede Perú)**.
+
+Proyecto académico desarrollado con **Astro v7** y **Tailwind CSS v4** bajo estándares del **PMBOK**.
 
 ## Scripts disponibles
 
@@ -12,13 +14,13 @@ Proyecto base para blog y documentación, basado en Astro + Tailwind CSS v4.
 
 ```text
 uni-2/
-├── public/          # Archivos estáticos públicos
+├── public/          # Archivos estáticos públicos y favicon
 ├── src/
 │   ├── assets/      # Recursos e imágenes
-│   ├── components/  # Componentes reutilizables de Astro/UI
-│   ├── layouts/     # Plantillas y layouts principales
-│   ├── pages/       # Páginas y rutas del blog
-│   └── styles/      # Estilos globales (Tailwind CSS)
+│   ├── components/  # Componentes reutilizables (Matriz, Tabla de Stakeholders, etc.)
+│   ├── layouts/     # Plantillas y layout principal con barra de lectura
+│   ├── pages/       # Contenido principal y secciones del proyecto
+│   └── styles/      # Estilos globales (Tailwind CSS v4)
 ├── astro.config.mjs # Configuración de Astro
 ├── package.json     # Dependencias y scripts
 └── tsconfig.json    # Configuración de TypeScript
