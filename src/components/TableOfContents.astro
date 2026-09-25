@@ -10,33 +10,36 @@ interface Props {
 }
 
 const defaultSections: SectionItem[] = [
-	{ id: "sec-info", num: "1", title: "Perfil Institucional de Coval Servicios Financieros" },
-	{ id: "sec-eef", num: "2", title: "2.2.1.1 Factores Ambientales Internos (EEF)" },
-	{ id: "sec-cultura", num: "2.1", title: "Cultura, Estructura y Gobernanza Organizacional" },
-	{ id: "sec-distribucion", num: "2.2", title: "Distribución Geográfica de Instalaciones y Recursos" },
-	{ id: "sec-infraestructura", num: "2.3", title: "Infraestructura Física y Redes (Punto Crítico)" },
-	{ id: "sec-sistemas", num: "2.4", title: "Sistemas de Tecnología de la Información (TI)" },
-	{ id: "sec-recursos", num: "2.5", title: "Disponibilidad de Recursos y Ventanas Operativas" },
-	{ id: "sec-personal", num: "2.6", title: "Capacidad y Competencias del Personal TI" },
-	{ id: "sec-financiera", num: "2.7", title: "Capacidad Financiera y Justificación de Inversión" },
-	{ id: "sec-proyecto", num: "3", title: "Alcance del Proyecto ISO/IEC 27001:2022" },
+	{ id: "sec-1", num: "1", title: "Caso de Negocio y Diagnóstico Situacional" },
+	{ id: "sec-1-1", num: "1.1", title: "Reseña de Coval Perú y Estructura Organizativa" },
+	{ id: "sec-1-2", num: "1.2", title: "Diagnóstico de Seguridad Física en Cuarto de Redes" },
+	{ id: "sec-2", num: "2", title: "Entradas: Project Charter y EEF (PMBOK)" },
+	{ id: "sec-2-1", num: "2.1", title: "Acta de Constitución Preliminar del Proyecto" },
+	{ id: "sec-2-2", num: "2.2", title: "2.2.1.1 Factores Ambientales Internos de la Organización (EEF)" },
+	{ id: "sec-3", num: "3", title: "Herramientas y Técnicas: Metodología y Juicio de Expertos" },
+	{ id: "sec-3-1", num: "3.1", title: "El Modelo de Consultoría Externa (Equipo UNTELS)" },
+	{ id: "sec-3-2", num: "3.2", title: "Juicio de Expertos y Levantamiento con Contraparte Local" },
+	{ id: "sec-3-3", num: "3.3", title: "Estrategia de Modelado de Interesados y Sustentación" },
+	{ id: "sec-4", num: "4", title: "Salidas: Matriz de Registro y Canvas de Clasificación" },
+	{ id: "sec-4-1", num: "4.1", title: "Evidencia 1: Registro de Interesados (Stakeholder Register)" },
+	{ id: "sec-4-2", num: "4.2", title: "Evidencia 2: Canvas Matriz Poder vs. Interés" },
 ];
 
 const { sections = defaultSections } = Astro.props;
 ---
 
-<nav id="indice" class="my-8 p-5 bg-neutral-50 rounded-lg border border-neutral-200 text-neutral-800">
+<nav id="indice" class="my-8 p-5 bg-neutral-50 rounded-xl border border-neutral-200 text-neutral-800">
 	<div class="flex items-center justify-between mb-3 pb-2 border-b border-neutral-200">
-		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-600">Índice del Proyecto TI</span>
-		<span class="text-xs text-neutral-400">{sections.length} Secciones</span>
+		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-700">Índice del Proyecto · Formulación TI</span>
+		<span class="text-xs font-mono text-neutral-500">4 Secciones Clave</span>
 	</div>
-	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-xs">
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs">
 		{sections.map((s) => (
 			<a
 				href={`#${s.id}`}
 				class="text-neutral-600 hover:text-neutral-950 py-1 transition-colors flex items-baseline gap-2 group"
 			>
-				<span class="text-neutral-400 group-hover:text-neutral-700 w-7 shrink-0 text-right font-mono">{s.num}.</span>
+				<span class="text-neutral-400 group-hover:text-neutral-900 w-6 shrink-0 text-right font-mono font-medium">{s.num}.</span>
 				<span class="truncate hover:underline underline-offset-2">{s.title}</span>
 			</a>
 		))}

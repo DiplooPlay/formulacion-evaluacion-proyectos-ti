@@ -1,0 +1,137 @@
+---
+// Canvas visual de Clasificación Poder vs. Interés (PMBOK)
+---
+
+<div class="my-6 rounded-2xl bg-neutral-900 text-neutral-100 p-5 sm:p-7 shadow-lg border border-neutral-800">
+	<div class="flex flex-wrap items-center justify-between gap-2 mb-6 pb-4 border-b border-neutral-800">
+		<div>
+			<span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold block">
+				Evidencia Gráfica · PMBOK
+			</span>
+			<h3 class="text-base sm:text-lg font-bold text-white">
+				Matriz de Clasificación de Interesados (Poder vs. Interés)
+			</h3>
+		</div>
+		<span class="text-xs font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">
+			Grid 2x2
+		</span>
+	</div>
+
+	<!-- Canvas Grid 2x2 -->
+	<div class="relative">
+		<!-- Y-Axis Label -->
+		<div class="text-[11px] font-mono uppercase tracking-wider text-neutral-400 mb-2 flex items-center justify-between">
+			<span class="font-bold text-neutral-300">PODER (Eje Vertical)</span>
+			<span class="text-[10px] text-neutral-400">ALTO ↑ / BAJO ↓</span>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+			<!-- Cuadrante 1: MANTENER SATISFECHO (Alto Poder / Bajo Interés) -->
+			<div class="p-4 sm:p-5 rounded-xl bg-neutral-800/80 border border-dashed border-neutral-700 flex flex-col justify-between hover:border-neutral-500 transition-colors">
+				<div>
+					<div class="flex items-center justify-between mb-2">
+						<span class="text-xs font-mono font-bold tracking-wider text-amber-400 uppercase">
+							Mantener Satisfecho
+						</span>
+						<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">
+							Alto Poder / Bajo Interés
+						</span>
+					</div>
+					<p class="text-[11px] text-neutral-400 mb-3">
+						Requiere reportes ejecutivos periódicos y estricto control presupuestal (enfoque de austeridad).
+					</p>
+				</div>
+				<div class="space-y-1.5 pt-2 border-t border-neutral-700/60">
+					<div class="flex items-center gap-2 text-xs font-medium text-white bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span>
+						<span><strong>Katherine Reyes Warthon</strong> · Gerente General (Perú)</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cuadrante 2: GESTIONAR ATENTAMENTE (Alto Poder / Alto Interés) -->
+			<div class="p-4 sm:p-5 rounded-xl bg-neutral-800/80 border border-dashed border-emerald-500/60 flex flex-col justify-between hover:border-emerald-400 transition-colors">
+				<div>
+					<div class="flex items-center justify-between mb-2">
+						<span class="text-xs font-mono font-bold tracking-wider text-emerald-400 uppercase">
+							Gestionar Atentamente
+						</span>
+						<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+							Alto Poder / Alto Interés
+						</span>
+					</div>
+					<p class="text-[11px] text-neutral-400 mb-3">
+						Stakeholder clave para la homologación corporativa y validación técnica del SGSI regional.
+					</p>
+				</div>
+				<div class="space-y-1.5 pt-2 border-t border-neutral-700/60">
+					<div class="flex items-center gap-2 text-xs font-medium text-white bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+						<span><strong>CISO Regional</strong> · Seguridad de la Información (Holding/Colombia)</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cuadrante 3: MONITOREAR (Bajo Poder / Bajo Interés) -->
+			<div class="p-4 sm:p-5 rounded-xl bg-neutral-800/80 border border-dashed border-neutral-700 flex flex-col justify-between hover:border-neutral-500 transition-colors">
+				<div>
+					<div class="flex items-center justify-between mb-2">
+						<span class="text-xs font-mono font-bold tracking-wider text-neutral-400 uppercase">
+							Monitorear
+						</span>
+						<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-neutral-700/30 text-neutral-300 border border-neutral-700">
+							Bajo Poder / Bajo Interés
+						</span>
+					</div>
+					<p class="text-[11px] text-neutral-400 mb-3">
+						Requiere coordinación para permisos de ingreso, pases de contratistas e inspección en San Isidro.
+					</p>
+				</div>
+				<div class="space-y-1.5 pt-2 border-t border-neutral-700/60">
+					<div class="flex items-center gap-2 text-xs font-medium text-neutral-200 bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-neutral-400 shrink-0"></span>
+						<span><strong>Administración del Edificio</strong> · Facilidades (San Isidro)</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cuadrante 4: MANTENER INFORMADO (Bajo Poder / Alto Interés) -->
+			<div class="p-4 sm:p-5 rounded-xl bg-neutral-800/80 border border-dashed border-blue-500/50 flex flex-col justify-between hover:border-blue-400 transition-colors">
+				<div>
+					<div class="flex items-center justify-between mb-2">
+						<span class="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase">
+							Mantener Informado
+						</span>
+						<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">
+							Bajo Poder / Alto Interés
+						</span>
+					</div>
+					<p class="text-[11px] text-neutral-400 mb-3">
+						Afectados directamente por las intervenciones técnicas y responsables de la operativa diaria.
+					</p>
+				</div>
+				<div class="space-y-1.5 pt-2 border-t border-neutral-700/60">
+					<div class="flex items-center gap-2 text-xs font-medium text-white bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
+						<span><strong>Wilder (Líder TI / Soporte Perú)</strong> · Contraparte Técnica</span>
+					</div>
+					<div class="flex items-center gap-2 text-xs font-medium text-white bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
+						<span><strong>Jefe de Operaciones Factoring</strong> · Negocio / Créditos</span>
+					</div>
+					<div class="flex items-center gap-2 text-xs font-medium text-white bg-neutral-900/60 p-2 rounded-lg">
+						<span class="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
+						<span><strong>Proveedor de Seguridad Electrónica</strong> · CCTV / Biometría</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- X-Axis Label -->
+		<div class="text-[11px] font-mono uppercase tracking-wider text-neutral-400 mt-4 flex items-center justify-between">
+			<span class="text-[10px]">← BAJO INTERÉS</span>
+			<span class="font-bold text-neutral-300">INTERÉS (Eje Horizontal)</span>
+			<span class="text-[10px]">ALTO INTERÉS →</span>
+		</div>
+	</div>
+</div>

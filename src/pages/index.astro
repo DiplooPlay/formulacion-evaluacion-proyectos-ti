@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import Callout from '../components/Callout.astro';
 import MetricCard from '../components/MetricCard.astro';
+import StakeholderCanvas from '../components/StakeholderCanvas.astro';
+import StakeholderTable from '../components/StakeholderTable.astro';
 ---
 
 <Layout
 	title="Coval Servicios Financieros · ISO/IEC 27001:2022 | Formulación y Evaluación de Proyectos TI"
 	description="Diagnóstico de Brechas (Gap Analysis) y Plan de Adecuación de Infraestructura y Controles Críticos bajo ISO/IEC 27001:2022 - Coval Servicios Financieros (Sede Perú)"
-	projectName="Coval Perú"
+	projectName="Coval Perú · ISO 27001"
 >
 	<main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
 		<!-- Encabezado del Proyecto -->
@@ -18,7 +20,7 @@ import MetricCard from '../components/MetricCard.astro';
 					Formulación y Evaluación de Proyectos TI
 				</span>
 				<span>·</span>
-				<span class="text-neutral-700 font-medium">Coval Servicios Financieros (Sede Perú)</span>
+				<span class="text-neutral-700 font-medium">Equipo Consultor UNTELS</span>
 			</div>
 
 			<h1 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 leading-snug tracking-tight mb-4">
@@ -26,29 +28,33 @@ import MetricCard from '../components/MetricCard.astro';
 			</h1>
 
 			<p class="text-base text-neutral-600 font-serif leading-relaxed italic mb-5">
-				Evaluación de factores organizacionales, análisis del estado actual de seguridad física y lógica en la sede Lima, y diseño de la propuesta de adecuación técnica y económica bajo el estándar internacional ISO/IEC 27001:2022.
+				Formulación técnica y análisis de interesados bajo el modelo de consultoría externa para la sede Perú de Coval Servicios Financieros, orientada a la mitigación de riesgos de seguridad física y alineamiento con el estándar internacional ISO/IEC 27001:2022.
 			</p>
 
 			<!-- Ficha Técnica Resumen -->
-			<div class="p-4 rounded-xl bg-white border border-neutral-200 text-xs text-neutral-600 space-y-2">
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pb-2 border-b border-neutral-100">
+			<div class="p-4 rounded-xl bg-white border border-neutral-200 text-xs text-neutral-600 space-y-2.5">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pb-2.5 border-b border-neutral-100">
 					<div>
-						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Organización</span>
+						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Organización Beneficiaria</span>
 						<strong class="text-neutral-900">Coval Servicios Financieros (Sede Perú)</strong>
 					</div>
 					<div>
-						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Ubicación física</span>
-						<strong class="text-neutral-900">San Isidro, Lima · Esquema Híbrido</strong>
+						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Ubicación y Sede</span>
+						<strong class="text-neutral-900">San Isidro, Lima · Modalidad Híbrida</strong>
 					</div>
 				</div>
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
 					<div>
-						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Holding Regional</span>
-						<span class="text-neutral-800">Coval LATAM (Chile, Perú, Colombia) · +25 años</span>
+						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Gerencia General (Perú)</span>
+						<span class="text-neutral-800 font-medium">Katherine Reyes Warthon</span>
 					</div>
 					<div>
-						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Marco de Referencia</span>
-						<span class="text-neutral-800 font-mono font-semibold">ISO/IEC 27001:2022</span>
+						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Contraparte Técnica TI</span>
+						<span class="text-neutral-800 font-medium">Wilder (Líder TI / Soporte)</span>
+					</div>
+					<div>
+						<span class="text-neutral-400 block uppercase font-mono text-[10px]">Marco Metodológico</span>
+						<span class="text-neutral-800 font-mono font-semibold">PMBOK + ISO 27001:2022</span>
 					</div>
 				</div>
 			</div>
@@ -57,15 +63,15 @@ import MetricCard from '../components/MetricCard.astro';
 		<!-- Métricas Clave de Contexto -->
 		<section class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
 			<MetricCard
-				title="Alcance Principal"
-				value="Sede Lima"
-				subtitle="San Isidro · Oficina Central"
+				title="Equipo Local de TI"
+				value="2 Personas"
+				subtitle="Soporte y Operación Local"
 				status="neutral"
 			/>
 			<MetricCard
 				title="Punto Crítico Físico"
 				value="Cuarto Redes"
-				subtitle="Sin Biometría / CCTV dedicada"
+				subtitle="Sin Biometría / Sin CCTV dedicada"
 				status="warning"
 			/>
 			<MetricCard
@@ -79,236 +85,390 @@ import MetricCard from '../components/MetricCard.astro';
 		<!-- Índice de Contenidos -->
 		<TableOfContents />
 
-		<!-- SECCIÓN 1: PERFIL INSTITUCIONAL -->
-		<section id="sec-info" class="my-12 scroll-mt-16">
-			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
-				1. Perfil Institucional de Coval Servicios Financieros
-			</h2>
-			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
-				<p>
-					<strong>Coval Servicios Financieros</strong> es una entidad especializada en el sector de financiamiento no bancario comercial, orientada a otorgar liquidez operativa y dinamizar el flujo de capital para el sector empresarial.
-				</p>
-
-				<blockquote class="my-6 pl-4 border-l-2 border-neutral-800 text-neutral-700 italic bg-neutral-50 py-3 pr-4 rounded-r-lg text-sm">
-					«Coval Servicios Financieros llegó a Perú a impulsar el desarrollo de las pequeñas, medianas y grandes empresas del país a través de nuestros productos de Factoring y Confirming, mediante los cuales buscamos mejorar los flujos de caja de nuestros clientes y brindarles apoyo para hacer crecer su negocio. Con más de 25 años de experiencia, Coval Servicios ofrece soluciones diseñadas según las necesidades de las empresas que nos eligen día a día para darles una mano mediante financiamiento rápido y seguro. Hoy, Coval LATAM está presente en Chile, Perú y Colombia, consolidando nuestra presencia en Latinoamérica y reafirmando nuestro compromiso con el desarrollo económico regional.»
-				</blockquote>
-
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-					<div class="p-4 bg-white rounded-lg border border-neutral-200">
-						<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Factoring</span>
-						<p class="text-xs sm:text-sm text-neutral-700">
-							Anticipo de cuentas por cobrar y cesión de facturas negociables para dotar de liquidez inmediata a proveedores y empresas sin esperar los plazos crediticios de clientes.
-						</p>
-					</div>
-					<div class="p-4 bg-white rounded-lg border border-neutral-200">
-						<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Confirming</span>
-						<p class="text-xs sm:text-sm text-neutral-700">
-							Gestión integral del pago a proveedores de empresas pagadoras, optimizando la cadena de suministros y facilitando el acceso a financiamiento preferencial.
-						</p>
-					</div>
-				</div>
-
-				<p class="text-xs sm:text-sm text-neutral-600 bg-neutral-100/60 p-3.5 rounded-lg border border-neutral-200">
-					<strong>Relevancia del estándar ISO/IEC 27001:2022:</strong> La naturaleza de las operaciones de Coval involucra el tratamiento continuo de información financiera crítica (facturas electrónicas XML, validaciones con SUNAT/CAVALI, contratos de cesión, estados financieros y datos crediticios confidenciales). Proteger la confidencialidad, integridad y disponibilidad de estos activos digitales es imperativo para la continuidad del negocio y el cumplimiento normativo.
-				</p>
-			</div>
-		</section>
-
-		<!-- SECCIÓN 2: EEF INTERNOS -->
-		<section id="sec-eef" class="my-12 scroll-mt-16">
+		<!-- ========================================== -->
+		<!-- SECCIÓN 1: CASO DE NEGOCIO Y DIAGNÓSTICO -->
+		<!-- ========================================== -->
+		<section id="sec-1" class="my-12 scroll-mt-16">
 			<div class="flex items-center gap-2 mb-2">
 				<span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-neutral-200 text-neutral-800">
-					2.2.1.1
+					SECCIÓN 1
 				</span>
 				<span class="text-xs text-neutral-500 uppercase font-semibold tracking-wider">
-					Factores Ambientales de la Empresa (EEF)
+					Contexto Organizacional
 				</span>
 			</div>
 			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
-				2.2.1.1 Factores ambientales de la empresa internos a la organización (EEF)
+				1. Caso de Negocio y Diagnóstico Situacional
 			</h2>
 
-			<p class="text-sm sm:text-base text-neutral-600 mb-8 leading-relaxed">
-				En el marco de la <strong>Formulación y Evaluación de Proyectos TI</strong> (alineado a las buenas prácticas del PMI / PMBOK), los Factores Ambientales de la Empresa (Enterprise Environmental Factors - EEF) internos representan las condiciones, restricciones e influencias organizacionales que no están bajo el control inmediato del equipo del proyecto, pero que condicionan de forma directa la viabilidad, el diseño técnico y el despliegue del <em>Diagnóstico de Brechas y Plan de Adecuación ISO 27001</em> en la sede Perú.
-			</p>
-
-			<!-- 2.1 CULTURA Y GOBERNANZA -->
-			<div id="sec-cultura" class="mb-10 scroll-mt-20">
+			<!-- 1.1 Reseña de Coval Perú -->
+			<div id="sec-1-1" class="mb-8 scroll-mt-20">
 				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
 					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
-					Cultura, estructura y gobernanza organizacionales
+					1.1 Reseña de Coval Servicios Financieros y Estructura Organizativa
 				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
+				<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
 					<p>
-						La organización opera bajo una <strong>estructura funcional jerárquica</strong> con reporte directo a la matriz en Chile y alineamiento permanente con las directrices corporativas del holding Coval LATAM.
+						<strong>Coval Servicios Financieros</strong> es una entidad especializada en financiamiento comercial para empresas, operando bajo un modelo financiero similar al de la banca no tradicional para dinamizar el flujo de caja corporativo mediante <strong>Factoring</strong> (anticipo de facturas por cobrar) y <strong>Confirming</strong> (pago a proveedores).
 					</p>
-					<p>
-						En su dinámica diaria, la <strong>cultura prioriza la agilidad comercial</strong> y la colocación oportuna de factoring para responder con rapidez a las necesidades de liquidez de los clientes.
-					</p>
-					<p>
-						Existe un <strong>precedente claro y favorable</strong> en la corporación: la filial de Colombia ya implementó con éxito la norma ISO 27001. Esto genera una clara expectativa corporativa de homologación en la sede Perú, pero manteniendo un enfoque realista adaptado a la escala operativa de la oficina en Lima.
-					</p>
-					<p>
-						El estilo de liderazgo es <strong>pragmático</strong>: se busca el cumplimiento formal y efectivo de los controles de seguridad y gobernanza sin sobredimensionar la operación con herramientas complejas o innecesariamente costosas.
-					</p>
-				</div>
-			</div>
 
-			<!-- 2.2 DISTRIBUCIÓN GEOGRÁFICA -->
-			<div id="sec-distribucion" class="mb-10 scroll-mt-20">
-				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
-					Distribución geográfica de las instalaciones y de los recursos
-				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
-					<p>
-						<strong>Sede principal en Lima:</strong> La oficina física corporativa está centralizada en el distrito financiero de <strong>San Isidro (Lima, Perú)</strong>, donde residen las instalaciones centrales y los equipos de red.
-					</p>
-					<p>
-						<strong>Esquema de trabajo híbrido:</strong> Gran parte del personal comercial y de los analistas de crédito operan bajo modalidad híbrida, ejecutando transacciones y evaluaciones fuera de la oficina mediante conexiones remotas seguras.
-					</p>
-					<p>
-						<strong>Gobernanza regional distribuida:</strong> Los recursos clave para la supervisión de TI, ciberseguridad y cumplimiento normativo se encuentran distribuidos tripartitamente entre las oficinas de <strong>Lima, Santiago de Chile y Bogotá</strong>.
-					</p>
-				</div>
-			</div>
+					<blockquote class="my-4 pl-4 border-l-2 border-neutral-800 text-neutral-700 italic bg-neutral-50 py-3 pr-4 rounded-r-lg text-xs sm:text-sm">
+						«Coval Servicios Financieros llegó a Perú a impulsar el desarrollo de las pequeñas, medianas y grandes empresas del país a través de nuestros productos de Factoring y Confirming, mediante los cuales buscamos mejorar los flujos de caja de nuestros clientes y brindarles apoyo para hacer crecer su negocio. Con más de 25 años de experiencia, Coval Servicios ofrece soluciones diseñadas según las necesidades de las empresas que nos eligen día a día para darles una mano mediante financiamiento rápido y seguro. Hoy, Coval LATAM está presente en Chile, Perú y Colombia, consolidando nuestra presencia en Latinoamérica y reafirmando nuestro compromiso con el desarrollo económico regional.»
+					</blockquote>
 
-			<!-- 2.3 INFRAESTRUCTURA (PUNTO CRÍTICO) -->
-			<div id="sec-infraestructura" class="mb-10 scroll-mt-20">
-				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-amber-600 rounded-full inline-block"></span>
-					Infraestructura física y tecnológica
-				</h3>
-				<div class="space-y-4 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
-					<Callout type="alerta" tag="Hallazgo Crítico · ISO 27001" title="Vulnerabilidad en Cuarto de Comunicaciones (Sede Lima)">
-						El cuarto de comunicaciones / centro de cableado y redes en la oficina de San Isidro carece actualmente de <strong>controles de acceso biométrico (huellero)</strong> y de un sistema de <strong>circuito cerrado de videovigilancia (cámaras de seguridad dedicadas)</strong>. Esto representa una no conformidad directa respecto al control físico del Anexo A de la norma ISO/IEC 27001:2022 (A.7.1 Perímetro físico de seguridad y A.7.2 Entrada física).
-					</Callout>
+					<p>
+						En su filial de Perú (ubicada en San Isidro, Lima), la empresa cuenta con <strong>más de 50 colaboradores</strong>, incluyendo colaboradores directos y personal externo, donde la fuerza de ventas comercial y los analistas de crédito representan la mayor parte de la dotación.
+					</p>
 
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-						<div class="p-4 bg-white rounded-lg border border-neutral-200">
-							<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Equipamiento de Red</span>
-							<p class="text-xs sm:text-sm text-neutral-700">
-								Switches de distribución, patch panels y router/firewall perimetral que concentran todo el tráfico de la red local y gestionan las salidas dedicadas a internet.
-							</p>
-						</div>
-						<div class="p-4 bg-white rounded-lg border border-neutral-200">
-							<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Endpoints de Usuarios</span>
-							<p class="text-xs sm:text-sm text-neutral-700">
-								Estaciones de trabajo corporativas y laptops portátiles asignadas individualmente a los colaboradores para su operativa diaria tanto en sede como de forma remota.
-							</p>
-						</div>
+					<div class="p-4 bg-white rounded-lg border border-neutral-200 space-y-2">
+						<h4 class="text-xs font-bold uppercase tracking-wider text-neutral-500 font-mono">Estructura Corporativa Regional</h4>
+						<p class="text-xs sm:text-sm text-neutral-700">
+							La organización cuenta con un esquema de reporte matricial: <strong>las gerencias principales residen en la matriz de Chile</strong> (incluyendo la Gerencia de Operaciones y la custodia de los servidores principales de datos), mientras que en Perú se cuenta con <strong>jefaturas operativas locales</strong> encargadas del negocio en terreno, lideradas por la Gerente General en Perú, <strong>Katherine Reyes Warthon</strong>.
+						</p>
 					</div>
 				</div>
 			</div>
 
-			<!-- 2.4 SISTEMAS DE TI -->
-			<div id="sec-sistemas" class="mb-10 scroll-mt-20">
+			<!-- 1.2 Diagnóstico de Seguridad Física -->
+			<div id="sec-1-2" class="mb-8 scroll-mt-20">
 				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
-					Sistemas de tecnología de la información
+					<span class="w-1.5 h-4 bg-amber-600 rounded-full inline-block"></span>
+					1.2 Diagnóstico de Seguridad Física en Cuarto de Redes (Sede Lima)
 				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
+				<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
 					<p>
-						<strong>Ecosistema Microsoft 365:</strong> Utilizado para el correo electrónico institucional, almacenamiento seguro en la nube (OneDrive/SharePoint) y plataformas de comunicación y reuniones (Microsoft Teams).
+						A nivel tecnológico en la sede Perú, el área de TI está conformada únicamente por <strong>2 personas</strong> (el líder operativo local de TI, <strong>Wilder</strong>, y su compañero técnico). La mayor parte de la infraestructura centralizada se encuentra soportada desde la matriz de Chile, donde se concentran los servidores principales.
 					</p>
-					<p>
-						<strong>Sistema web del Core de Factoring:</strong> Aplicación crítica del negocio para la gestión integral del ciclo de factoring: registro de clientes, validación de facturas comerciales, consulta de estados en plataformas externas y cesión formal de facturas negociables.
-					</p>
-					<p>
-						<strong>Mesa de ayuda y soporte interno:</strong> Herramientas para la recepción, canalización y atención de solicitudes e incidencias técnicas reportadas por los usuarios.
-					</p>
-					<p>
-						<strong>Brecha en auditoría y registro:</strong> Se evidencia la falta de un <strong>sistema centralizado de bitácora/registro automatizado</strong> para auditar y monitorear de manera fehaciente los accesos físicos y lógicos al centro de redes y datos.
-					</p>
-				</div>
-			</div>
 
-			<!-- 2.5 DISPONIBILIDAD DE RECURSOS -->
-			<div id="sec-recursos" class="mb-10 scroll-mt-20">
-				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
-					Disponibilidad de recursos y restricciones operativas
-				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
-					<p>
-						<strong>Presupuesto local acotado:</strong> Existe una limitación en el presupuesto asignado específicamente a la filial local, lo que exige que el proyecto justifique cada adquisición bajo el principio de <em>bajo costo y alto impacto</em> en reducción de riesgos.
-					</p>
-					<p>
-						<strong>Equipo de TI reducido:</strong> El personal de TI local en Lima es compacto y debe alternar su tiempo entre atender las incidencias de soporte operativo cotidiano y las labores de relevamiento, análisis de brechas e implementación del proyecto.
-					</p>
-					<p>
-						<strong>Ventanas de intervención técnica restringidas:</strong> Debido a la criticidad de las operaciones de factoring y desembolso de fondos, cualquier trabajo físico o lógico en la infraestructura de red queda estrictamente limitado a <strong>horarios no comerciales</strong> (noches o fines de semana) para garantizar cero interrupciones en la atención de operaciones.
-					</p>
-				</div>
-			</div>
+					<Callout type="alerta" tag="Hallazgo Crítico · ISO 27001" title="Vulnerabilidad de Acceso Físico en San Isidro">
+						A pesar de manejar información financiera sumamente sensible (facturas electrónicas XML, cesiones crediticias y estados contables), el <strong>cuarto de comunicaciones / centro de cableado y redes</strong> de la oficina de Lima presenta tres debilidades físicas críticas:
+						<ul class="list-disc pl-5 mt-2 space-y-1 text-xs">
+							<li><strong>Acceso con chapa común:</strong> No cuenta con control biométrico (huellero) ni cerradura electromagnética controlada por credenciales.</li>
+							<li><strong>Rack abierto:</strong> Equipos de comunicaciones (switches de distribución, patch panels y firewall perimetral) expuestos físicamente.</li>
+							<li><strong>Ausencia de videovigilancia:</strong> No existe un circuito cerrado de televisión (CCTV) dedicado para registrar visualmente quién entra o manipula el equipamiento.</li>
+						</ul>
+					</Callout>
 
-			<!-- 2.6 CAPACIDAD DEL PERSONAL -->
-			<div id="sec-personal" class="mb-10 scroll-mt-20">
-				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
-					Capacidad y competencias del personal
-				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
-					<p>
-						<strong>Perfil técnico operativo sólido:</strong> El personal de TI local posee un buen dominio práctico en soporte a usuarios, cableado estructurado, administración básica de conmutadores/redes y mantenimiento correctivo/preventivo.
-					</p>
-					<p>
-						<strong>Entendimiento del marco normativo:</strong> Existe claridad en el equipo respecto a que la norma <strong>ISO/IEC 27001 no es únicamente tecnológica</strong>, sino un sistema integral de procesos y gestión. Reconocen con precisión que la brecha primordial en Lima radica en la estandarización documental, los procedimientos formales y la seguridad física perimetral básica.
-					</p>
-					<p>
-						<strong>Apalancamiento regional:</strong> El equipo cuenta con la valiosa oportunidad de apoyarse en la experiencia, plantillas de políticas y documentación técnica previa desarrollada por los ingenieros de la sede de <strong>Coval Colombia</strong> durante su proceso de certificación.
-					</p>
-				</div>
-			</div>
-
-			<!-- 2.7 CAPACIDAD FINANCIERA -->
-			<div id="sec-financiera" class="mb-10 scroll-mt-20">
-				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
-					<span class="w-1.5 h-4 bg-emerald-600 rounded-full inline-block"></span>
-					Capacidad financiera de la organización
-				</h3>
-				<div class="space-y-3 text-neutral-700 text-sm sm:text-base leading-relaxed pl-3.5 border-l border-neutral-200">
-					<p>
-						<strong>Salud financiera corporativa:</strong> La empresa goza de un flujo de caja saludable y estable producto de su actividad en colocación de factoring y confirming en el mercado peruano.
-					</p>
-					<p>
-						<strong>Presupuesto TI moderado y controlado:</strong> El presupuesto asignado para TI local se administra de manera prudente y se encuentra sujeto a la aprobación de la Gerencia General y Finanzas.
-					</p>
-					<p>
-						<strong>Viabilidad de financiamiento para el plan:</strong> La empresa cuenta con capacidad financiera suficiente para solventar adquisiciones puntuales de <strong>hardware de seguridad física</strong> (dispositivos de control de acceso biométrico con huella digital, cerradura electromagnética, cámaras de videovigilancia CCTV para el cuarto de datos) y adecuaciones de cableado/infraestructura, siempre que el plan de adecuación demuestre un <strong>retorno en mitigación de riesgos y un costo-beneficio directo</strong>.
+					<p class="text-xs sm:text-sm text-neutral-600">
+						Esta condición representa una <strong>no conformidad flagrante</strong> respecto a los controles <strong>A.7.1 (Perímetro físico de seguridad)</strong> y <strong>A.7.2 (Entrada física)</strong> del Anexo A de la norma <strong>ISO/IEC 27001:2022</strong>, comprometiendo la integridad de la red local y generando un riesgo operacional ante auditorías del holding.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECCIÓN 3: ALCANCE DEL PROYECTO TI -->
-		<section id="sec-proyecto" class="my-12 scroll-mt-16 border-t border-neutral-200 pt-8">
+		<!-- ========================================== -->
+		<!-- SECCIÓN 2: ENTRADAS (INSUMOS PMBOK & EEF)  -->
+		<!-- ========================================== -->
+		<section id="sec-2" class="my-12 scroll-mt-16">
+			<div class="flex items-center gap-2 mb-2">
+				<span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-neutral-200 text-neutral-800">
+					SECCIÓN 2
+				</span>
+				<span class="text-xs text-neutral-500 uppercase font-semibold tracking-wider">
+					Entradas Metodológicas (PMBOK)
+				</span>
+			</div>
 			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
-				3. Alcance del Proyecto ISO/IEC 27001:2022
+				2. Entradas: Project Charter y Factores Ambientales (EEF)
 			</h2>
-			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
-				<p>
-					A partir del levantamiento de los factores ambientales de la organización (EEF), el proyecto tiene como meta formular y evaluar la solución para cerrar las brechas identificadas en <strong>Coval Servicios Financieros (Sede Perú)</strong>.
-				</p>
 
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-					<div class="p-5 bg-white rounded-lg border border-neutral-200 space-y-2">
-						<span class="text-xs font-bold text-neutral-900 uppercase tracking-wide block">Fase 1: Diagnóstico (Gap Analysis)</span>
-						<p class="text-xs sm:text-sm text-neutral-600">
-							Comparativa formal de la situación actual frente a las 4 cláusulas operativas (4 a 10) y los controles aplicables del <strong>Anexo A de ISO/IEC 27001:2022</strong> (Controles Organizacionales, de Personas, Físicos y Tecnológicos).
-						</p>
-					</div>
-					<div class="p-5 bg-white rounded-lg border border-neutral-200 space-y-2">
-						<span class="text-xs font-bold text-neutral-900 uppercase tracking-wide block">Fase 2: Plan de Adecuación y Viabilidad</span>
-						<p class="text-xs sm:text-sm text-neutral-600">
-							Diseño técnico, cronograma de implementación y evaluación económica (CAPEX en biométrico/CCTV, OPEX de mantenimiento) para remediar las vulnerabilidades físicas y documentales de la sede San Isidro.
-						</p>
+			<!-- 2.1 Project Charter Preliminar -->
+			<div id="sec-2-1" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					2.1 Acta de Constitución Preliminar del Proyecto (Project Charter)
+				</h3>
+				<div class="space-y-3 text-neutral-700 leading-relaxed text-sm sm:text-base">
+					<p>
+						Como entrada fundamental de la fase de iniciación según el PMBOK, el Project Charter preliminar formaliza la necesidad de adecuar la sede Lima a los estándares de seguridad de la corporación Coval LATAM.
+					</p>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+						<div class="p-3.5 bg-white rounded-lg border border-neutral-200 text-xs">
+							<span class="font-bold text-neutral-900 block mb-1">Propósito del Proyecto</span>
+							<p class="text-neutral-600">
+								Realizar el diagnóstico de brechas (Gap Analysis) y diseñar el plan técnico-económico de adecuación física y lógica bajo ISO/IEC 27001:2022 en Coval Perú.
+							</p>
+						</div>
+						<div class="p-3.5 bg-white rounded-lg border border-neutral-200 text-xs">
+							<span class="font-bold text-neutral-900 block mb-1">Criterio de Éxito</span>
+							<p class="text-neutral-600">
+								Cierre total de la brecha de acceso no autorizado al rack de datos, asegurando bitácoras automáticas e instalación de CCTV sin exceder el presupuesto moderado local.
+							</p>
+						</div>
 					</div>
 				</div>
+			</div>
 
-				<Callout type="metodologia" tag="Formulación TI" title="Enfoque de Evaluación">
-					Durante las siguientes fases del curso se desarrollará el <strong>estudio técnico de la solución de acceso/CCTV</strong>, la <strong>evaluación presupuestaria (CAPEX/OPEX)</strong> y el <strong>análisis costo-beneficio</strong> de la mitigación del riesgo frente a eventuales multas o incidentes de seguridad en el sector financiero.
-				</Callout>
+			<!-- 2.2 Factores Ambientales Internos (EEF) -->
+			<div id="sec-2-2" class="mb-8 scroll-mt-20">
+				<div class="flex items-center gap-2 mb-1.5">
+					<span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-neutral-200 text-neutral-800">
+						2.2.1.1
+					</span>
+					<span class="text-xs text-neutral-500 uppercase font-semibold tracking-wider">
+						EEF Internos a la Organización
+					</span>
+				</div>
+				<h3 class="text-lg font-bold text-neutral-900 mb-3">
+					2.2.1.1 Factores ambientales de la empresa internos a la organización (EEF)
+				</h3>
+				<p class="text-sm text-neutral-600 mb-6 leading-relaxed">
+					Los factores ambientales internos delimitan el terreno sobre el cual se formula la solución TI, condicionando el alcance, costos y cronograma:
+				</p>
+
+				<!-- Las 7 dimensiones EEF -->
+				<div class="space-y-6">
+					<!-- 1. Cultura y Gobernanza -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+							Cultura, estructura y gobernanza organizacionales
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Estructura funcional jerárquica:</strong> Reporte directo a la matriz en Chile y alineamiento con directrices corporativas del holding.</li>
+							<li><strong>Prioridad en agilidad comercial:</strong> La cultura interna prioriza la colocación ágil de factoring en el día a día para asegurar liquidez a los clientes.</li>
+							<li><strong>Precedente corporativo:</strong> La filial de <em>Coval Colombia</em> ya implementó la norma ISO 27001, generando la expectativa corporativa de homologación en Lima adaptada a su escala.</li>
+							<li><strong>Liderazgo pragmático:</strong> Se busca el cumplimiento formal de seguridad y gobernanza sin sobredimensionar herramientas complejas innecesarias.</li>
+						</ul>
+					</div>
+
+					<!-- 2. Distribución Geográfica -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+							Distribución geográfica de las instalaciones y de los recursos
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Oficina física corporativa:</strong> Centralizada en el centro financiero de San Isidro (Lima).</li>
+							<li><strong>Modalidad híbrida:</strong> Personal comercial y analistas de crédito operan frecuentemente fuera de la oficina mediante conexiones remotas.</li>
+							<li><strong>Supervisión regional distribuida:</strong> Recursos de supervisión de TI y cumplimiento distribuidos entre Lima, Santiago y Bogotá.</li>
+						</ul>
+					</div>
+
+					<!-- 3. Infraestructura -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-amber-600"></span>
+							Infraestructura física y tecnológica
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Punto crítico identificado:</strong> El cuarto de comunicaciones/centro de cableado y redes en Lima carece actualmente de controles de acceso biométrico (huellero) y circuito cerrado de videovigilancia (cámaras de seguridad dedicadas).</li>
+							<li><strong>Equipamiento de red:</strong> Switches de distribución, patch panels y router/firewall perimetral que concentran el tráfico local y las salidas de internet.</li>
+							<li><strong>Estaciones de trabajo:</strong> Laptops y equipos corporativos asignados a los colaboradores para su operativa diaria.</li>
+						</ul>
+					</div>
+
+					<!-- 4. Sistemas de TI -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+							Sistemas de tecnología de la información
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Ecosistema Microsoft 365:</strong> Para correo corporativo, almacenamiento en la nube y comunicación interna.</li>
+							<li><strong>Sistema web del Core de Factoring:</strong> Para registro, validación y cesión de facturas negociables.</li>
+							<li><strong>Herramientas de soporte:</strong> Para gestión de solicitudes y atención de incidencias internas.</li>
+							<li><strong>Falta de bitácora centralizada:</strong> Ausencia de un registro automatizado para auditorías de acceso al centro de redes.</li>
+						</ul>
+					</div>
+
+					<!-- 5. Disponibilidad de Recursos -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+							Disponibilidad de recursos y restricciones de horario
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Presupuesto local limitado:</strong> Exige que el proyecto justifique compras de bajo costo y alto impacto en reducción de riesgos.</li>
+							<li><strong>Personal de TI reducido:</strong> El equipo local (2 personas) debe repartir su tiempo entre el soporte diario a los más de 50 usuarios y las actividades del proyecto.</li>
+							<li><strong>Ventanas restringidas:</strong> Intervención técnica restringida estrictamente a <strong>horarios no comerciales</strong> (fuera de la franja de 9:00 a 18:00 hrs) para no interrumpir operaciones de factoring.</li>
+						</ul>
+					</div>
+
+					<!-- 6. Capacidad del Personal -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+							Capacidad del personal de TI
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Dominio práctico:</strong> Personal local con experiencia en soporte a usuarios, cableado estructurado, redes y mantenimiento.</li>
+							<li><strong>Familiaridad conceptual:</strong> Reconocen que ISO 27001 es un marco de procesos y gestión, identificando que la brecha principal está en la estandarización y seguridad física/perimetral básica.</li>
+							<li><strong>Sinergia con Colombia:</strong> Oportunidad de apoyarse en la experiencia y documentación técnica previa desarrollada por los ingenieros de la sede Colombia.</li>
+						</ul>
+					</div>
+
+					<!-- 7. Capacidad Financiera -->
+					<div class="p-4 rounded-xl bg-white border border-neutral-200">
+						<h4 class="text-sm font-bold text-neutral-900 mb-2 flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+							Capacidad financiera de la organización
+						</h4>
+						<ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+							<li><strong>Flujo financiero saludable:</strong> Alta liquidez como empresa de servicios de financiamiento comercial.</li>
+							<li><strong>Presupuesto moderado y sujeto a aprobación:</strong> Presupuesto local de TI administrado con cautela por la Gerencia General (Katherine Reyes Warthon).</li>
+							<li><strong>Capacidad de inversión puntual:</strong> Solvencia para financiar adquisiciones de hardware de seguridad física (biométrico, cámaras CCTV para cuarto de datos) siempre que demuestre costo-beneficio directo.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 3: HERRAMIENTAS Y TÉCNICAS        -->
+		<!-- ========================================== -->
+		<section id="sec-3" class="my-12 scroll-mt-16">
+			<div class="flex items-center gap-2 mb-2">
+				<span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-neutral-200 text-neutral-800">
+					SECCIÓN 3
+				</span>
+				<span class="text-xs text-neutral-500 uppercase font-semibold tracking-wider">
+					Herramientas y Técnicas PMBOK
+				</span>
+			</div>
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				3. Herramientas y Técnicas: Metodología y Juicio de Expertos
+			</h2>
+
+			<!-- 3.1 Modelo Consultoría Externa -->
+			<div id="sec-3-1" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					3.1 El Modelo de "Consultoría Externa de TI" (Equipo UNTELS)
+				</h3>
+				<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+					<p>
+						Para abordar el proyecto con rigor profesional y viabilidad real, el equipo de estudiantes de la <strong>UNTELS</strong> se sitúa en el rol de <strong>Equipo de Formulación y Consultoría de TI</strong>, interactuando con la empresa a través de una contraparte técnica interna debidamente acreditada.
+					</p>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div class="p-4 bg-white rounded-lg border border-neutral-200">
+							<span class="text-xs font-bold uppercase tracking-wider text-neutral-500 font-mono block mb-1">
+								Equipo Formulador / Consultor
+							</span>
+							<p class="text-xs sm:text-sm text-neutral-900 font-medium">
+								Alumnos del curso Formulación y Evaluación de Proyectos TI (UNTELS).
+							</p>
+						</div>
+						<div class="p-4 bg-white rounded-lg border border-neutral-200">
+							<span class="text-xs font-bold uppercase tracking-wider text-neutral-500 font-mono block mb-1">
+								Contraparte Técnica Interna (Coval)
+							</span>
+							<p class="text-xs sm:text-sm text-neutral-900 font-medium">
+								<strong>Wilder</strong>, Líder Operativo de TI / Soporte en la Sede Lima.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 3.2 Juicio de Expertos -->
+			<div id="sec-3-2" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					3.2 Juicio de Expertos y Levantamiento Técnico
+				</h3>
+				<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+					<p>
+						Bajo el estándar del PMBOK, el <strong>Juicio de Expertos (Expert Judgment)</strong> constituye la técnica principal para recopilar datos sin requerir entrevistas invasivas a los comités directivos de Chile o Colombia. Toda la información de gobernanza regional, restricciones horarias, inventario de hardware y brechas de seguridad fue provista y validada por el líder local de TI como <strong>informante clave</strong>.
+					</p>
+
+					<Callout type="metodologia" tag="Técnica PMBOK" title="Modelado de Stakeholders sin Entrevista Directa">
+						El PMBOK establece que los interesados no requieren sentarse en la misma mesa de levantamiento para ser clasificados. Se modelan a partir de su rol organizacional y sus restricciones objetivas:
+						<ul class="list-disc pl-5 mt-2 space-y-1 text-xs">
+							<li><strong>Gerente General Perú (Katherine Reyes Warthon):</strong> Se modela como actor de <em>Alto Poder</em> y exigencia de austeridad presupuestal. La estrategia: cotización económica sustentada.</li>
+							<li><strong>CISO Regional (Holding/Colombia):</strong> Actor de <em>Alto Interés</em>. Su expectativa es homologar controles y evitar que Perú sea el eslabón vulnerable del grupo.</li>
+							<li><strong>Jefe de Operaciones Factoring:</strong> Actor de <em>Alto Interés operativo</em>. Su expectativa: cero cortes en el sistema entre 9:00 y 18:00 hrs.</li>
+							<li><strong>Ente Certificador ISO 27001:</strong> Actor auditor externo indispensable para la acreditación formal de conformidad.</li>
+						</ul>
+					</Callout>
+				</div>
+			</div>
+
+			<!-- 3.3 Sustentación Académica -->
+			<div id="sec-3-3" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					3.3 Sustentación Metodológica ante el Jurado / Docente
+				</h3>
+				<div class="p-5 rounded-xl bg-neutral-900 text-neutral-100 text-xs sm:text-sm leading-relaxed border border-neutral-800 space-y-3">
+					<div class="flex items-center gap-2 text-emerald-400 font-mono text-[11px] font-bold uppercase">
+						<span>Defensa Formal de Fuentes de Información</span>
+					</div>
+					<p class="italic text-neutral-300">
+						«El proyecto se formuló bajo un esquema de consultoría técnica apoyado en el <strong>Juicio de Expertos</strong>. Nuestro contacto directo y contraparte es el responsable técnico del área de TI de la sede Lima (Wilder), quien nos proporcionó el levantamiento técnico, las especificaciones de seguridad física del cuarto de datos, las políticas corporativas vigentes provenientes de la sede central de Colombia y las restricciones de horario y presupuesto local. Con esos insumos levantamos la matriz de interesados y los factores ambientales de la organización cumpliendo los estándares del PMBOK.»
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 4: SALIDAS (REGISTRO Y MATRIZ)     -->
+		<!-- ========================================== -->
+		<section id="sec-4" class="my-12 scroll-mt-16">
+			<div class="flex items-center gap-2 mb-2">
+				<span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-600 text-white">
+					SECCIÓN 4 · EVIDENCIAS
+				</span>
+				<span class="text-xs text-neutral-500 uppercase font-semibold tracking-wider">
+					Entregables Solicitados
+				</span>
+			</div>
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				4. Salidas: Matriz de Registro y Canvas de Clasificación
+			</h2>
+
+			<p class="text-sm sm:text-base text-neutral-700 mb-6 leading-relaxed">
+				En cumplimiento con la asignación académica del curso, a continuación se presentan las <strong>dos evidencias formales</strong> para el análisis y gestión de interesados:
+			</p>
+
+			<!-- 4.1 Evidencia 1: Matriz de Registro -->
+			<div id="sec-4-1" class="mb-10 scroll-mt-20">
+				<h3 class="text-base sm:text-lg font-bold text-neutral-900 mb-2 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					4.1 Evidencia 1: Matriz de Registro de Interesados (Stakeholder Register)
+				</h3>
+				<p class="text-xs sm:text-sm text-neutral-600 mb-3">
+					Registro exhaustivo de los actores internos y externos con su rol, nivel de poder, interés, requerimientos clave y estrategia de gestión PMBOK:
+				</p>
+				<StakeholderTable />
+			</div>
+
+			<!-- 4.2 Evidencia 2: Canvas Gráfico -->
+			<div id="sec-4-2" class="mb-10 scroll-mt-20">
+				<h3 class="text-base sm:text-lg font-bold text-neutral-900 mb-2 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-emerald-600 rounded-full inline-block"></span>
+					4.2 Evidencia 2: Canvas de Clasificación (Matriz 2x2 Poder vs. Interés)
+				</h3>
+				<p class="text-xs sm:text-sm text-neutral-600 mb-3">
+					Representación visual en cuatro cuadrantes para priorizar la estrategia de comunicación e involucramiento durante el ciclo del proyecto:
+				</p>
+				<StakeholderCanvas />
+			</div>
+
+			<!-- Galería de Evidencias Digitalizadas -->
+			<div class="my-10 p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+				<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 mb-3">
+					Evidencias Digitalizadas del Levantamiento
+				</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<div class="p-3 bg-white rounded-lg border border-neutral-200 text-xs">
+						<span class="font-bold text-neutral-900 block mb-1">A. Registro Original</span>
+						<img 
+							src="/evidencias/registro-interesados.png" 
+							alt="Registro de Interesados Coval Perú" 
+							class="w-full rounded border border-neutral-100 object-cover mt-2 shadow-xs hover:opacity-95 transition-opacity" 
+						/>
+					</div>
+					<div class="p-3 bg-white rounded-lg border border-neutral-200 text-xs">
+						<span class="font-bold text-neutral-900 block mb-1">B. Matriz Poder vs. Interés</span>
+						<img 
+							src="/evidencias/matriz-poder-interes.png" 
+							alt="Matriz Poder vs Interés Coval Perú" 
+							class="w-full rounded border border-neutral-100 object-cover mt-2 shadow-xs hover:opacity-95 transition-opacity" 
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
