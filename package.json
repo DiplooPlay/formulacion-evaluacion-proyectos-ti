@@ -1,0 +1,23 @@
+{
+  "name": "uni-2",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=18.20.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "bpmn-js": "^18.29.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  }
+}
