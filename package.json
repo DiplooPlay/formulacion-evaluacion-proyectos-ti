@@ -10,6 +10,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && wrangler pages deploy dist --project-name formulacion-evaluacion-proyectos-ti --branch main",
+    "sync": "astro build && wrangler pages deploy dist --project-name formulacion-evaluacion-proyectos-ti --branch main && git add . && git commit -m 'update: cambios y despliegue' && git push",
     "astro": "astro"
   },
   "dependencies": {
@@ -20,5 +22,8 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "wrangler": "^4.139.0"
   }
 }
