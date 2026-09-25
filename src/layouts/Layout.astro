@@ -4,11 +4,13 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
+	projectName?: string;
 }
 
 const {
-	title = 'Blog / Documentación',
-	description = 'Proyecto y caso de estudio',
+	title = 'Formulación y Evaluación de Proyectos TI',
+	description = 'Blog y reporte académico para Formulación y Evaluación de Proyectos de Tecnologías de la Información',
+	projectName = 'Proyecto TI',
 } = Astro.props;
 ---
 
@@ -28,15 +30,20 @@ const {
 
 		<!-- Minimal Header -->
 		<header class="border-b border-neutral-200 bg-white/90 backdrop-blur sticky top-0 z-40">
-			<div class="max-w-3xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 h-13 flex items-center justify-between">
 				<div class="flex items-center gap-2 text-xs font-medium text-neutral-600">
-					<a href="/" class="font-bold text-neutral-900 hover:text-neutral-700 transition-colors">Uni 2</a>
+					<a href="/" class="font-bold text-neutral-900 hover:text-neutral-700 transition-colors">
+						Proyectos TI
+					</a>
 					<span class="text-neutral-300">/</span>
-					<span class="text-neutral-600 truncate">Blog</span>
+					<span class="text-neutral-600 truncate">{projectName}</span>
 				</div>
 
 				<nav class="flex items-center gap-4 text-xs">
-					<a href="#inicio" class="text-neutral-600 hover:text-neutral-950 transition-colors">Inicio</a>
+					<a href="#indice" class="text-neutral-600 hover:text-neutral-950 transition-colors">Índice</a>
+					<a href="#estudio-tecnico" class="hidden sm:inline text-neutral-600 hover:text-neutral-950 transition-colors">Técnico</a>
+					<a href="#evaluacion-economica" class="hidden sm:inline text-neutral-600 hover:text-neutral-950 transition-colors">Económico</a>
+					<a href="#anexos" class="text-neutral-800 font-medium hover:text-neutral-950 underline underline-offset-4 decoration-neutral-300">Anexos</a>
 				</nav>
 			</div>
 		</header>
@@ -46,9 +53,13 @@ const {
 
 		<!-- Minimal Footer -->
 		<footer class="border-t border-neutral-200 bg-white py-8 mt-16 text-xs text-neutral-500">
-			<div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+				<div>
+					<span class="font-medium text-neutral-800">Formulación y Evaluación de Proyectos TI</span>
+					<span class="mx-1.5 text-neutral-300">·</span>
+					<span>Documento Académico / Caso de Estudio</span>
+				</div>
 				<span>Uni 2</span>
-				<span>Preparado para nuevo contenido</span>
 			</div>
 		</footer>
 

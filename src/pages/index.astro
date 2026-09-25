@@ -1,35 +1,222 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import Callout from '../components/Callout.astro';
+import MetricCard from '../components/MetricCard.astro';
 ---
 
-<Layout title="Uni 2 | Blog" description="Nuevo proyecto de blog">
-	<main id="inicio" class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-		<header class="mb-12 border-b border-neutral-200 pb-8">
-			<div class="inline-block px-2.5 py-1 mb-4 text-xs font-medium rounded-full bg-neutral-100 text-neutral-700 border border-neutral-200">
-				Proyecto Base Listo
+<Layout
+	title="Formulación y Evaluación de Proyectos TI | Blog y Caso de Estudio"
+	description="Estructura metodológica para la formulación, estudio técnico, financiero y evaluación de proyectos TI"
+	projectName="Formulación TI"
+>
+	<main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
+		<!-- Encabezado del Proyecto -->
+		<header class="border-b border-neutral-200 pb-8 mb-8">
+			<div class="flex items-center gap-2 text-xs text-neutral-500 font-medium mb-3">
+				<span class="px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-700 border border-neutral-200 font-mono text-[11px]">
+					Curso Universitario
+				</span>
+				<span>·</span>
+				<span>Formulación y Evaluación de Proyectos TI</span>
 			</div>
-			<h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mb-4">
-				Bienvenido a Uni 2
+
+			<h1 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-neutral-900 leading-snug tracking-tight mb-4">
+				Formulación y Evaluación del Proyecto TI
 			</h1>
-			<p class="text-base text-neutral-600 leading-relaxed">
-				Estructura inicial configurada con Astro y Tailwind CSS v4. Listo para redactar nuevos artículos, casos de estudio o documentación.
+
+			<p class="text-base text-neutral-600 font-serif leading-relaxed italic mb-4">
+				Propuesta metodológica integral: diagnóstico, estudio técnico, viabilidad económica-financiera y gestión de riesgos para la implementación de soluciones tecnológicas.
 			</p>
+
+			<div class="pt-3 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-500">
+				<span>Proyecto: <strong class="text-neutral-800">[Nombre del Proyecto / Empresa]</strong></span>
+				<div class="flex items-center gap-3">
+					<a href="#sec-7" class="text-neutral-800 font-medium hover:underline">Evaluación Financiera ↓</a>
+					<span>·</span>
+					<a href="#anexos" class="text-neutral-800 font-medium hover:underline">Anexos ↓</a>
+				</div>
+			</div>
 		</header>
 
-		<section class="space-y-6">
-			<div class="rounded-xl border border-neutral-200 bg-white p-6 shadow-xs">
-				<h2 class="text-lg font-semibold text-neutral-900 mb-2">Comienza a construir tu contenido</h2>
-				<p class="text-sm text-neutral-600 mb-4 leading-relaxed">
-					Puedes editar <code class="px-1.5 py-0.5 rounded bg-neutral-100 text-neutral-800 text-xs font-mono">src/pages/index.astro</code> o agregar nuevos componentes en <code class="px-1.5 py-0.5 rounded bg-neutral-100 text-neutral-800 text-xs font-mono">src/components/</code>.
+		<!-- Resumen de Métricas Clave (Preview) -->
+		<section class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+			<MetricCard
+				title="VAN Estimado (NPV)"
+				value="$ 0.00"
+				subtitle="Tasa de descuento: 12%"
+				status="positive"
+			/>
+			<MetricCard
+				title="TIR Estimada (IRR)"
+				value="0.0 %"
+				subtitle="Viabilidad financiera"
+				status="positive"
+			/>
+			<MetricCard
+				title="Payback (Retorno)"
+				value="0 meses"
+				subtitle="Período de recuperación"
+				status="neutral"
+			/>
+		</section>
+
+		<!-- Índice de Contenidos -->
+		<TableOfContents />
+
+		<!-- SECCIÓN 1: PROBLEMA Y JUSTIFICACIÓN -->
+		<section id="sec-1" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				1. Definición del Problema y Justificación TI
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Descripción de la situación problemática actual que motiva la formulación del proyecto tecnológico. Aquí se identifica la brecha tecnológica, los cuellos de botella operativos o las oportunidades de optimización en la organización.
 				</p>
-				<div class="flex items-center gap-3 text-xs text-neutral-500">
-					<span class="inline-flex items-center gap-1.5">
-						<span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-						Servidor listo
-					</span>
-					<span>•</span>
-					<span>Astro + Tailwind CSS v4</span>
+
+				<Callout type="metodologia" tag="Diagnóstico" title="Árbol de Problemas y Objetivos">
+					Se recomienda estructurar la causa raíz del problema central mediante la técnica del árbol de problemas, facilitando la conversión hacia objetivos directos del proyecto TI.
+				</Callout>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+					<div class="p-4 bg-white rounded-lg border border-neutral-200">
+						<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Problema Central</span>
+						<p class="text-sm text-neutral-900 font-medium">[Definir la problemática principal identificada]</p>
+					</div>
+					<div class="p-4 bg-white rounded-lg border border-neutral-200">
+						<span class="text-xs font-semibold text-neutral-500 uppercase block mb-1">Justificación del Proyecto</span>
+						<p class="text-sm text-neutral-900 font-medium">[Impacto esperado con la solución tecnológica propuesta]</p>
+					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 2: OBJETIVOS Y ALCANCE -->
+		<section id="sec-2" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				2. Objetivos del Proyecto y Alcance
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Establecimiento del objetivo general y específicos, así como la delimitación de lo que incluye y no incluye el proyecto.
+				</p>
+				<div class="p-5 bg-white rounded-lg border border-neutral-200 space-y-3">
+					<h3 class="text-sm font-bold text-neutral-900 uppercase tracking-wide">Objetivo General</h3>
+					<p class="text-sm text-neutral-700">
+						[Diseñar, formular y evaluar la factibilidad técnica y económica de la solución TI...]
+					</p>
+					<h3 class="text-sm font-bold text-neutral-900 uppercase tracking-wide pt-2 border-t border-neutral-100">Objetivos Específicos</h3>
+					<ul class="list-disc pl-5 space-y-1 text-sm text-neutral-700">
+						<li>Realizar el estudio de mercado y levantamiento de requerimientos de usuarios.</li>
+						<li>Definir la arquitectura de software, infraestructura y requerimientos no funcionales.</li>
+						<li>Elaborar el presupuesto de inversión (CAPEX) y gastos de operación (OPEX).</li>
+						<li>Determinar la viabilidad financiera mediante indicadores de rentabilidad (VAN, TIR, B/C).</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 3: ESTUDIO DE MERCADO -->
+		<section id="sec-3" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				3. Estudio de Mercado y Análisis de Demanda
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Análisis de los usuarios o beneficiarios de la solución TI, estimación de la demanda del servicio, análisis de alternativas existentes o competidores en el mercado.
+				</p>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 4: ESTUDIO TÉCNICO -->
+		<section id="sec-4" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				4. Estudio Técnico y Arquitectura de la Solución
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Diseño técnico del proyecto TI: selección del stack tecnológico, infraestructura en la nube o local, modelado de procesos, seguridad y especificación de requerimientos de software/hardware.
+				</p>
+
+				<Callout type="info" tag="Arquitectura" title="Stack y Dimensionamiento">
+					Especificación de tecnologías, APIs, bases de datos y dimensionamiento del hosting para soportar la carga prevista.
+				</Callout>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 5: ESTUDIO LEGAL Y ORGANIZACIONAL -->
+		<section id="sec-5" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				5. Estudio Legal, Organizacional y Equipo TI
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Marco normativo y regulatorio aplicable (protección de datos, licencias de software, ciberseguridad), además de la estructura de roles del equipo de proyecto (Product Owner, Scrum Master, Desarrolladores, QA).
+				</p>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 6: PRESUPUESTO -->
+		<section id="sec-6" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				6. Presupuesto (CAPEX y OPEX)
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Desglose de costos de inversión inicial (hardware, licencias, desarrollo) y costos recurrentes de operación y mantenimiento.
+				</p>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 7: EVALUACIÓN ECONÓMICA -->
+		<section id="sec-7" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				7. Evaluación Económica y Financiera (VAN, TIR, Payback)
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Modelado del flujo de caja proyectado para los periodos de evaluación. Cálculo del Valor Actual Neto (VAN), Tasa Interna de Retorno (TIR), relación Beneficio/Costo y análisis de sensibilidad frente a variaciones de costos e ingresos.
+				</p>
+
+				<Callout type="evaluacion" tag="Criterio Financiero" title="Criterio de Decisión de Inversión">
+					Un proyecto TI es económicamente viable si el VAN &gt; 0 a la tasa de descuento fijada (COK/WACC) y si la TIR supera la tasa de oportunidad de la organización.
+				</Callout>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 8: GESTIÓN DE RIESGOS -->
+		<section id="sec-8" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				8. Gestión de Riesgos y Plan de Contingencia
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Matriz de riesgos tecnológicos, operativos, legales y financieros con su respectiva probabilidad, impacto y estrategias de mitigación.
+				</p>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 9: CONCLUSIONES -->
+		<section id="sec-9" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4 pb-2 border-b border-neutral-200">
+				9. Conclusiones y Dictamen de Viabilidad
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Síntesis de los resultados obtenidos en cada estudio y dictamen final sobre la conveniencia y factibilidad de ejecutar el proyecto TI.
+				</p>
+			</div>
+		</section>
+
+		<!-- SECCIÓN 10: ANEXOS -->
+		<section id="anexos" class="my-12 scroll-mt-16 border-t border-neutral-200 pt-8">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-4">
+				10. Anexos y Evidencias
+			</h2>
+			<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<p>
+					Espacio reservado para diagramas arquitectónicos, flujos de procesos, cotizaciones de infraestructura, encuestas de mercado o capturas de prototipos.
+				</p>
 			</div>
 		</section>
 	</main>

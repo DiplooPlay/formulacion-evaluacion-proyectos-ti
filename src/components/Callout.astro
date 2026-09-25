@@ -1,0 +1,30 @@
+---
+interface Props {
+	type?: 'info' | 'metodologia' | 'evaluacion' | 'alerta';
+	tag?: string;
+	title: string;
+}
+
+const {
+	type = 'info',
+	tag = 'Metodología TI',
+	title,
+} = Astro.props;
+
+const stylesByType = {
+	info: 'border-l-neutral-700 bg-neutral-100/70',
+	metodologia: 'border-l-indigo-600 bg-indigo-50/50',
+	evaluacion: 'border-l-emerald-600 bg-emerald-50/50',
+	alerta: 'border-l-amber-600 bg-amber-50/50',
+};
+---
+
+<aside class={`my-6 p-4 rounded-lg border-l-4 ${stylesByType[type]} text-xs text-neutral-700 leading-relaxed font-sans`}>
+	<div class="flex items-center gap-2 mb-1.5 font-mono font-bold text-[11px] text-neutral-900">
+		<span class="px-1.5 py-0.5 rounded bg-white/80 border border-neutral-300 text-[10px] uppercase">{tag}</span>
+		<span>{title}</span>
+	</div>
+	<div class="text-neutral-600 space-y-1">
+		<slot />
+	</div>
+</aside>
