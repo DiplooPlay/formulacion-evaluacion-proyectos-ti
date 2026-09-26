@@ -8,7 +8,32 @@
 	}
 }
 
-/* Custom adjustments for BPMN embedded canvas if used */
+/* Custom adjustments for BPMN embedded canvas */
 .bjs-powered-by {
 	display: none !important;
+}
+
+.djs-container {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.djs-shape .djs-label {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+	font-size: 11.5px !important;
+	line-height: 1.35 !important;
+}
+
+.djs-connection .djs-label {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+	font-size: 10px !important;
+	font-weight: 600 !important;
+	fill: #1e293b !important;
+}
+
+/* Rotated vertical text in pool and lane headers */
+.djs-shape[data-element-id*="Participant"] text,
+.djs-shape[data-element-id*="Lane"] text {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+	font-size: 11px !important;
+	font-weight: 600 !important;
 }

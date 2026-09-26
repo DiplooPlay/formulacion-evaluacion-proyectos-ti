@@ -1,0 +1,99 @@
+---
+import bpmnRaw from '../data/bpmn/Coval_Organigrama_Gobernanza.bpmn?raw';
+
+interface Props {
+	title?: string;
+}
+
+const { title = 'Organigrama y gobernanza regional' } = Astro.props;
+const viewerId = 'bpmn-viewer-coval-gobernanza';
+---
+
+<div class="my-6 rounded-xl border border-neutral-200 bg-white overflow-hidden text-neutral-800 shadow-xs">
+	<!-- Barra superior con título y controles de zoom -->
+	<div class="flex items-center justify-between gap-3 px-4 py-3 bg-neutral-50/80 border-b border-neutral-200">
+		<h4 class="text-sm font-semibold text-neutral-900">{title}</h4>
+
+		<div class="flex items-center gap-1">
+			<button
+				type="button"
+				class="zoom-in-btn px-2.5 py-1 bg-white border border-neutral-300 rounded hover:bg-neutral-100 text-neutral-700 transition-colors font-mono text-xs font-semibold"
+				data-target={viewerId}
+				title="Acercar"
+			>
+				+
+			</button>
+			<button
+				type="button"
+				class="zoom-out-btn px-2.5 py-1 bg-white border border-neutral-300 rounded hover:bg-neutral-100 text-neutral-700 transition-colors font-mono text-xs font-semibold"
+				data-target={viewerId}
+				title="Alejar"
+			>
+				-
+			</button>
+			<button
+				type="button"
+				class="reset-zoom-btn px-2.5 py-1 bg-white border border-neutral-300 rounded hover:bg-neutral-100 text-neutral-700 transition-colors text-xs font-medium"
+				data-target={viewerId}
+				title="Ajustar al visor"
+			>
+				Ajustar
+			</button>
+		</div>
+	</div>
+
+	<!-- Canvas Interactivo -->
+	<div
+		id={viewerId}
+		class="bpmn-canvas w-full h-[500px] bg-[#fafafa] relative cursor-grab active:cursor-grabbing select-none"
+		data-xml={bpmnRaw}
+	>
+		<div class="absolute inset-0 flex items-center justify-center text-xs text-neutral-400 pointer-events-none loading-indicator font-mono">
+			Cargando diagrama...
+		</div>
+	</div>
+</div>
+
+<script>
+	import BpmnViewer from 'bpmn-js/dist/bpmn-navigated-viewer.production.min.js';
+
+	document.querySelectorAll<HTMLElement>('.bpmn-canvas').forEach(async (canvasElem) => {
+		const xml = canvasElem.getAttribute('data-xml');
+		const loading = canvasElem.querySelector('.loading-indicator');
+		if (!xml) return;
+
+		try {
+			const viewer = new BpmnViewer({
+				container: canvasElem,
+				keyboard: { bindTo: window }
+			});
+
+			await viewer.importXML(xml);
+			const canvas = viewer.get('canvas');
+			canvas.zoom('fit-viewport');
+			if (loading) loading.remove();
+
+			const targetId = canvasElem.id;
+			const zoomInBtn = document.querySelector(`.zoom-in-btn[data-target="${targetId}"]`);
+			const zoomOutBtn = document.querySelector(`.zoom-out-btn[data-target="${targetId}"]`);
+			const resetZoomBtn = document.querySelector(`.reset-zoom-btn[data-target="${targetId}"]`);
+
+			zoomInBtn?.addEventListener('click', () => {
+				canvas.zoom(canvas.zoom() * 1.25);
+			});
+
+			zoomOutBtn?.addEventListener('click', () => {
+				canvas.zoom(canvas.zoom() * 0.8);
+			});
+
+			resetZoomBtn?.addEventListener('click', () => {
+				canvas.zoom('fit-viewport');
+			});
+		} catch (err) {
+			console.error('Error al renderizar el diagrama:', err);
+			if (loading) {
+				loading.textContent = 'Error al cargar el diagrama.';
+			}
+		}
+	});
+</script>

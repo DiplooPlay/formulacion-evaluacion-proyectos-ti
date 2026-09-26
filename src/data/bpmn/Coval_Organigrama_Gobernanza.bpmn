@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0"
+                  xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0"
+                  id="Definitions_Coval_Gobernanza"
+                  targetNamespace="http://coval.com/bpmn20"
+                  exporter="Camunda Modeler"
+                  exporterVersion="5.0.0">
+
+  <!-- =================================================== -->
+  <!-- COLLABORATION: PARTICIPANTS (POOLS) & MESSAGE FLOWS -->
+  <!-- =================================================== -->
+  <bpmn:collaboration id="Collaboration_Coval_Gobernanza">
+    <bpmn:participant id="Participant_Chile" name="Coval Chile (Matriz)" processRef="Process_Chile" />
+    <bpmn:participant id="Participant_Colombia" name="Coval Colombia (SGSI)" processRef="Process_Colombia" />
+    <bpmn:participant id="Participant_Peru" name="Coval Perú" processRef="Process_Peru" />
+
+    <!-- Flujos interinstitucionales dirigidos y sin colisiones -->
+    <bpmn:messageFlow id="Flow_Colombia_to_Peru_GG" name="Lineamientos ISO 27001" sourceRef="Task_CO_1" targetRef="Task_GG_1" />
+    <bpmn:messageFlow id="Flow_Chile_to_Peru_GG" name="Directrices Corporativas" sourceRef="Task_CL_2" targetRef="Task_GG_2" />
+    <bpmn:messageFlow id="Flow_GG_to_TI" name="Aprobación Presupuestal" sourceRef="Task_GG_2" targetRef="Task_TI_3" />
+    <bpmn:messageFlow id="Flow_OP_to_TI" name="Ventana: Fuera 9-18 hrs" sourceRef="Task_OP_2" targetRef="Task_TI_3" />
+  </bpmn:collaboration>
+
+  <!-- =================================================== -->
+  <!-- PROCESO 1: CHILE (MATRIZ)                           -->
+  <!-- =================================================== -->
+  <bpmn:process id="Process_Chile" isExecutable="false">
+    <bpmn:task id="Task_CL_1" name="Custodia central de servidores y base core">
+      <bpmn:outgoing>Seq_CL_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_CL_2" name="Supervisión de conectividad e infraestructura">
+      <bpmn:incoming>Seq_CL_1</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Seq_CL_1" sourceRef="Task_CL_1" targetRef="Task_CL_2" />
+  </bpmn:process>
+
+  <!-- =================================================== -->
+  <!-- PROCESO 2: COLOMBIA (SGSI CERTIFICADO)              -->
+  <!-- =================================================== -->
+  <bpmn:process id="Process_Colombia" isExecutable="false">
+    <bpmn:task id="Task_CO_1" name="Emisión de directrices ISO/IEC 27001:2022">
+      <bpmn:outgoing>Seq_CO_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_CO_2" name="Supervisión y homologación de controles">
+      <bpmn:incoming>Seq_CO_1</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Seq_CO_1" sourceRef="Task_CO_1" targetRef="Task_CO_2" />
+  </bpmn:process>
+
+  <!-- =================================================== -->
+  <!-- PROCESO 3: PERÚ (SEDE LOCAL SAN ISIDRO)             -->
+  <!-- =================================================== -->
+  <bpmn:process id="Process_Peru" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_Peru">
+      <bpmn:lane id="Lane_Peru_GG" name="Gerencia General">
+        <bpmn:flowNodeRef>Task_GG_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_GG_2</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Peru_OP" name="Operaciones Factoring">
+        <bpmn:flowNodeRef>Task_OP_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_OP_2</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Peru_TI" name="Área de TI Local">
+        <bpmn:flowNodeRef>Task_TI_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_TI_2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_TI_3</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <!-- Gerencia General (Marco Bravo Mences) -->
+    <bpmn:task id="Task_GG_1" name="Gobernanza ejecutiva y dirección (Marco Bravo)">
+      <bpmn:outgoing>Seq_GG_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_GG_2" name="Aprobación de presupuesto para adecuaciones">
+      <bpmn:incoming>Seq_GG_1</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Seq_GG_1" sourceRef="Task_GG_1" targetRef="Task_GG_2" />
+
+    <!-- Operaciones Factoring & Confirming -->
+    <bpmn:task id="Task_OP_1" name="Colocación continua de factoring y confirming">
+      <bpmn:outgoing>Seq_OP_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_OP_2" name="Restricción operativa (Franja 9:00 - 18:00)">
+      <bpmn:incoming>Seq_OP_1</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Seq_OP_1" sourceRef="Task_OP_1" targetRef="Task_OP_2" />
+
+    <!-- TI Local (Wilder y Soporte Técnico) -->
+    <bpmn:task id="Task_TI_1" name="Inspección de cuarto de redes y switches Aruba">
+      <bpmn:outgoing>Seq_TI_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_TI_2" name="Coordinación técnica con consultores UNTELS">
+      <bpmn:incoming>Seq_TI_1</bpmn:incoming>
+      <bpmn:outgoing>Seq_TI_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_TI_3" name="Implementación de cerradura y rack en horario nocturno">
+      <bpmn:incoming>Seq_TI_2</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Seq_TI_1" sourceRef="Task_TI_1" targetRef="Task_TI_2" />
+    <bpmn:sequenceFlow id="Seq_TI_2" sourceRef="Task_TI_2" targetRef="Task_TI_3" />
+  </bpmn:process>
+
+  <!-- =================================================== -->
+  <!-- BPMN DIAGRAM INTERCHANGE (BPMNDI)                   -->
+  <!-- =================================================== -->
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_Coval_Gobernanza">
+
+      <!-- Pool 1: Chile -->
+      <bpmndi:BPMNShape id="Participant_Chile_di" bpmnElement="Participant_Chile" isHorizontal="true"
+                        bioc:stroke="#1d4ed8" bioc:fill="#f8fafc" color:border-color="#1d4ed8" color:background-color="#f8fafc">
+        <dc:Bounds x="60" y="40" width="1020" height="130" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CL_1_di" bpmnElement="Task_CL_1"
+                        bioc:stroke="#2563eb" bioc:fill="#eff6ff" color:border-color="#2563eb" color:background-color="#eff6ff">
+        <dc:Bounds x="210" y="70" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CL_2_di" bpmnElement="Task_CL_2"
+                        bioc:stroke="#2563eb" bioc:fill="#eff6ff" color:border-color="#2563eb" color:background-color="#eff6ff">
+        <dc:Bounds x="470" y="70" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Seq_CL_1_di" bpmnElement="Seq_CL_1">
+        <di:waypoint x="410" y="105" />
+        <di:waypoint x="470" y="105" />
+      </bpmndi:BPMNEdge>
+
+      <!-- Pool 2: Colombia -->
+      <bpmndi:BPMNShape id="Participant_Colombia_di" bpmnElement="Participant_Colombia" isHorizontal="true"
+                        bioc:stroke="#047857" bioc:fill="#f8fafc" color:border-color="#047857" color:background-color="#f8fafc">
+        <dc:Bounds x="60" y="200" width="1020" height="130" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CO_1_di" bpmnElement="Task_CO_1"
+                        bioc:stroke="#059669" bioc:fill="#ecfdf5" color:border-color="#059669" color:background-color="#ecfdf5">
+        <dc:Bounds x="210" y="230" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CO_2_di" bpmnElement="Task_CO_2"
+                        bioc:stroke="#059669" bioc:fill="#ecfdf5" color:border-color="#059669" color:background-color="#ecfdf5">
+        <dc:Bounds x="470" y="230" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Seq_CO_1_di" bpmnElement="Seq_CO_1">
+        <di:waypoint x="410" y="265" />
+        <di:waypoint x="470" y="265" />
+      </bpmndi:BPMNEdge>
+
+      <!-- Pool 3: Perú -->
+      <bpmndi:BPMNShape id="Participant_Peru_di" bpmnElement="Participant_Peru" isHorizontal="true"
+                        bioc:stroke="#334155" bioc:fill="#ffffff" color:border-color="#334155" color:background-color="#ffffff">
+        <dc:Bounds x="60" y="360" width="1020" height="420" />
+      </bpmndi:BPMNShape>
+      
+      <!-- Lanes Perú (con 60px de ancho exclusivo para encabezados) -->
+      <bpmndi:BPMNShape id="Lane_Peru_GG_di" bpmnElement="Lane_Peru_GG" isHorizontal="true">
+        <dc:Bounds x="120" y="360" width="960" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Peru_OP_di" bpmnElement="Lane_Peru_OP" isHorizontal="true">
+        <dc:Bounds x="120" y="500" width="960" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Peru_TI_di" bpmnElement="Lane_Peru_TI" isHorizontal="true">
+        <dc:Bounds x="120" y="640" width="960" height="140" />
+      </bpmndi:BPMNShape>
+
+      <!-- Tareas Perú GG -->
+      <bpmndi:BPMNShape id="Task_GG_1_di" bpmnElement="Task_GG_1"
+                        bioc:stroke="#4338ca" bioc:fill="#eef2ff" color:border-color="#4338ca" color:background-color="#eef2ff">
+        <dc:Bounds x="210" y="395" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_GG_2_di" bpmnElement="Task_GG_2"
+                        bioc:stroke="#4338ca" bioc:fill="#eef2ff" color:border-color="#4338ca" color:background-color="#eef2ff">
+        <dc:Bounds x="470" y="395" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Seq_GG_1_di" bpmnElement="Seq_GG_1">
+        <di:waypoint x="410" y="430" />
+        <di:waypoint x="470" y="430" />
+      </bpmndi:BPMNEdge>
+
+      <!-- Tareas Perú OP -->
+      <bpmndi:BPMNShape id="Task_OP_1_di" bpmnElement="Task_OP_1"
+                        bioc:stroke="#d97706" bioc:fill="#fffbeb" color:border-color="#d97706" color:background-color="#fffbeb">
+        <dc:Bounds x="210" y="535" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_OP_2_di" bpmnElement="Task_OP_2"
+                        bioc:stroke="#d97706" bioc:fill="#fffbeb" color:border-color="#d97706" color:background-color="#fffbeb">
+        <dc:Bounds x="470" y="535" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Seq_OP_1_di" bpmnElement="Seq_OP_1">
+        <di:waypoint x="410" y="570" />
+        <di:waypoint x="470" y="570" />
+      </bpmndi:BPMNEdge>
+
+      <!-- Tareas Perú TI -->
+      <bpmndi:BPMNShape id="Task_TI_1_di" bpmnElement="Task_TI_1"
+                        bioc:stroke="#0f172a" bioc:fill="#f1f5f9" color:border-color="#0f172a" color:background-color="#f1f5f9">
+        <dc:Bounds x="210" y="675" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_TI_2_di" bpmnElement="Task_TI_2"
+                        bioc:stroke="#0f172a" bioc:fill="#f1f5f9" color:border-color="#0f172a" color:background-color="#f1f5f9">
+        <dc:Bounds x="470" y="675" width="200" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_TI_3_di" bpmnElement="Task_TI_3"
+                        bioc:stroke="#0f172a" bioc:fill="#f1f5f9" color:border-color="#0f172a" color:background-color="#f1f5f9">
+        <dc:Bounds x="750" y="675" width="240" height="70" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Seq_TI_1_di" bpmnElement="Seq_TI_1">
+        <di:waypoint x="410" y="710" />
+        <di:waypoint x="470" y="710" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Seq_TI_2_di" bpmnElement="Seq_TI_2">
+        <di:waypoint x="670" y="710" />
+        <di:waypoint x="750" y="710" />
+      </bpmndi:BPMNEdge>
+
+      <!-- Message Flows: Canales paralelos ortogonales sin intersección -->
+      <!-- 1. Colombia -> Perú GG (Vertical directo entre piscinas) -->
+      <bpmndi:BPMNEdge id="Flow_Colombia_to_Peru_GG_di" bpmnElement="Flow_Colombia_to_Peru_GG">
+        <di:waypoint x="310" y="300" />
+        <di:waypoint x="310" y="395" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="318" y="340" width="135" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- 2. Chile -> Perú GG (Canal x=695) -->
+      <bpmndi:BPMNEdge id="Flow_Chile_to_Peru_GG_di" bpmnElement="Flow_Chile_to_Peru_GG">
+        <di:waypoint x="670" y="105" />
+        <di:waypoint x="695" y="105" />
+        <di:waypoint x="695" y="415" />
+        <di:waypoint x="670" y="415" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="702" y="245" width="145" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- 3. Gerencia General -> TI Local (Canal x=715) -->
+      <bpmndi:BPMNEdge id="Flow_GG_to_TI_di" bpmnElement="Flow_GG_to_TI">
+        <di:waypoint x="670" y="445" />
+        <di:waypoint x="715" y="445" />
+        <di:waypoint x="715" y="695" />
+        <di:waypoint x="750" y="695" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="720" y="475" width="135" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- 4. Operaciones -> TI Local (Canal x=730) -->
+      <bpmndi:BPMNEdge id="Flow_OP_to_TI_di" bpmnElement="Flow_OP_to_TI">
+        <di:waypoint x="670" y="570" />
+        <di:waypoint x="730" y="570" />
+        <di:waypoint x="730" y="725" />
+        <di:waypoint x="750" y="725" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="735" y="590" width="140" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
