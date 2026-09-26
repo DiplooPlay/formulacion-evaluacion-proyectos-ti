@@ -13,16 +13,15 @@ const defaultSections: SectionItem[] = [
 	{ id: "sec-1", num: "1", title: "Caso de Negocio y Diagnóstico Situacional" },
 	{ id: "sec-1-1", num: "1.1", title: "Reseña de Coval Perú y Estructura Organizativa" },
 	{ id: "sec-1-2", num: "1.2", title: "Diagnóstico de Seguridad Física en Cuarto de Redes" },
-	{ id: "sec-2", num: "2", title: "Entradas: Project Charter y Factores Ambientales" },
-	{ id: "sec-2-1", num: "2.1", title: "Acta de Constitución Preliminar" },
-	{ id: "sec-2-2", num: "2.2", title: "Factores Ambientales Internos (EEF)" },
-	{ id: "sec-3", num: "3", title: "Herramientas y Técnicas: Metodología y Juicio de Expertos" },
-	{ id: "sec-3-1", num: "3.1", title: "Modelo de Consultoría Externa (Equipo UNTELS)" },
-	{ id: "sec-3-2", num: "3.2", title: "Juicio de Expertos y Contraparte Técnica Local" },
-	{ id: "sec-3-3", num: "3.3", title: "Estrategia de Modelado de Interesados" },
-	{ id: "sec-4", num: "4", title: "Registro y Matriz de Interesados" },
-	{ id: "sec-4-1", num: "4.1", title: "Registro de Interesados" },
-	{ id: "sec-4-2", num: "4.2", title: "Matriz de Clasificación (Poder vs. Interés)" },
+	{ id: "sec-2", num: "2", title: "Identificación y Clasificación de Interesados" },
+	{ id: "sec-2-1", num: "2.1", title: "Matriz de Clasificación (Poder vs. Interés)" },
+	{ id: "sec-2-2", num: "2.2", title: "Registro de Interesados (Stakeholder Register)" },
+	{ id: "sec-3", num: "3", title: "Factores Ambientales de la Empresa (EEF)" },
+	{ id: "sec-3-1", num: "3.1", title: "Organigrama y Gobernanza Regional" },
+	{ id: "sec-3-2", num: "3.2", title: "Condiciones de Infraestructura y Restricciones" },
+	{ id: "sec-4", num: "4", title: "Metodología y Juicio de Expertos" },
+	{ id: "sec-4-1", num: "4.1", title: "Modelo de Consultoría Externa (Equipo UNTELS)" },
+	{ id: "sec-4-2", num: "4.2", title: "Aplicación del Juicio de Expertos y Canal de Levantamiento" },
 ];
 
 const { sections = defaultSections } = Astro.props;
@@ -31,7 +30,7 @@ const { sections = defaultSections } = Astro.props;
 <nav id="indice" class="my-8 p-5 bg-neutral-50 rounded-xl border border-neutral-200 text-neutral-800">
 	<div class="flex items-center justify-between mb-3 pb-2 border-b border-neutral-200">
 		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-700">Índice del Documento</span>
-		<span class="text-xs font-mono text-neutral-400">4 Secciones</span>
+		<span class="text-xs font-mono text-neutral-400">4 Secciones Clave</span>
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs">
 		{sections.map((s) => (
