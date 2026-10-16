@@ -1,0 +1,132 @@
+---
+// Tabla de Evaluación y Justificación de Alternativas
+---
+
+<div class="my-6 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-xs">
+	<table class="w-full table-fixed text-left text-xs border-collapse">
+		<thead>
+			<tr class="bg-neutral-50/90 text-neutral-700 font-mono text-[10px] sm:text-[11px] border-b border-neutral-200">
+				<th class="p-2 sm:p-2.5 w-[22%] align-top">Criterio de Selección</th>
+				<th class="p-2 sm:p-2.5 w-[20%] align-top">Alternativa 1: Adecuación Local</th>
+				<th class="p-2 sm:p-2.5 w-[20%] align-top">Alternativa 2: Enterprise IP</th>
+				<th class="p-2 sm:p-2.5 w-[38%] align-top">Justificación Técnica</th>
+			</tr>
+		</thead>
+		<tbody class="divide-y divide-neutral-150 text-neutral-700 leading-normal text-[11px] sm:text-xs">
+			<!-- Fila 1: Plazo -->
+			<tr class="hover:bg-neutral-50/50 transition-colors">
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<strong class="text-neutral-900 block font-semibold text-[11px] sm:text-xs">Cumplimiento de Plazo</strong>
+					<span class="text-neutral-500 text-[10px] sm:text-[11px] block mt-0.5 font-normal">(Meta SMART: 45 días)</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Favorable</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">~21 días cal.</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-amber-700 block">🟡 Medio / Alto</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">~30 a 45 días cal.</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top text-neutral-600 break-words leading-relaxed">
+					La Alt. 1 utiliza equipamiento con stock comercial inmediato en Lima. La Alt. 2 requiere trámites de red y homologación con la matriz en Chile que superan el límite del objetivo.
+				</td>
+			</tr>
+
+			<!-- Fila 2: Normativa -->
+			<tr class="hover:bg-neutral-50/50 transition-colors">
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<strong class="text-neutral-900 block font-semibold text-[11px] sm:text-xs">Conformidad Normativa</strong>
+					<span class="text-neutral-500 text-[10px] sm:text-[11px] block mt-0.5 font-normal">(ISO/IEC 27001)</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Favorable</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">Cumplimiento 100%</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Favorable</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">Cumplimiento 100%</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top text-neutral-600 break-words leading-relaxed">
+					Ambas opciones cubren el 100% de los requisitos físicos exigidos: perímetro cerrado, control nominal de acceso, bitácoras y protección del hardware.
+				</td>
+			</tr>
+
+			<!-- Fila 3: Presupuesto -->
+			<tr class="hover:bg-neutral-50/50 transition-colors">
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<strong class="text-neutral-900 block font-semibold text-[11px] sm:text-xs">Esfuerzo Presupuestal</strong>
+					<span class="text-neutral-500 text-[10px] sm:text-[11px] block mt-0.5 font-normal">(Inversión - CAPEX)</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Bajo</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">S/ 6,900</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-red-700 block">🔴 Alto</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">S/ 18,650</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top text-neutral-600 break-words leading-relaxed">
+					La Alt. 1 optimiza el gasto para una sede que solo alberga un gabinete concentrador (IDF). La Alt. 2 sobredimensiona el costo al requerir controladoras y licencias corporativas.
+				</td>
+			</tr>
+
+			<!-- Fila 4: Riesgo Operativo -->
+			<tr class="hover:bg-neutral-50/50 transition-colors">
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<strong class="text-neutral-900 block font-semibold text-[11px] sm:text-xs">Riesgo en el Enlace</strong>
+					<span class="text-neutral-500 text-[10px] sm:text-[11px] block mt-0.5 font-normal">(Continuidad factoring)</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Mínimo</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">Ventana única</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-amber-700 block">🟡 Medio / Alto</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">Dependencia WAN</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top text-neutral-600 break-words leading-relaxed">
+					La Alt. 1 es puramente física; el corte se hace en una sola ventana nocturna/fin de semana. La Alt. 2 exige tocar configuraciones de VLANs y túneles hacia Chile con riesgo de desconexión.
+				</td>
+			</tr>
+
+			<!-- Fila 5: Autonomía -->
+			<tr class="hover:bg-neutral-50/50 transition-colors">
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<strong class="text-neutral-900 block font-semibold text-[11px] sm:text-xs">Autonomía Operativa</strong>
+					<span class="text-neutral-500 text-[10px] sm:text-[11px] block mt-0.5 font-normal">(Mantenimiento)</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-emerald-700 block">🟢 Favorable</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">Soporte en Lima</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top break-words">
+					<span class="font-medium text-amber-700 block">🟡 Regular</span>
+					<span class="text-neutral-600 text-[10px] sm:text-[11px] block mt-0.5">NOC Chile</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-top text-neutral-600 break-words leading-relaxed">
+					La sede local puede auditar y gestionar el cuarto sin depender de soporte técnico remoto ni del pago recurrente de plataformas en la nube.
+				</td>
+			</tr>
+
+			<!-- Fila 6: Dictamen Final -->
+			<tr class="bg-neutral-50/90 font-medium border-t-2 border-neutral-300">
+				<td class="p-2 sm:p-2.5 align-middle break-words">
+					<strong class="text-neutral-900 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">DICTAMEN FINAL</strong>
+				</td>
+				<td class="p-2 sm:p-2.5 align-middle break-words">
+					<span class="inline-block px-2 py-0.5 rounded font-bold text-[10px] sm:text-xs bg-emerald-100 text-emerald-800 border border-emerald-300">
+						SELECCIONADA
+					</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-middle break-words">
+					<span class="inline-block px-2 py-0.5 rounded font-bold text-[10px] sm:text-xs bg-red-100 text-red-800 border border-red-300">
+						DESCARTADA
+					</span>
+				</td>
+				<td class="p-2 sm:p-2.5 align-middle text-neutral-800 text-[11px] sm:text-xs font-medium break-words leading-relaxed">
+					La Alt. 1 cumple todos los criterios dentro de las restricciones fijadas; la Alt. 2 queda descalificada por plazo y costo.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

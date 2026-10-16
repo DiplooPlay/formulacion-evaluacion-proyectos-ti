@@ -1,0 +1,460 @@
+---
+// Componente SVG: Árbol de Problemas
+---
+
+<div class="my-6 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6 shadow-xs overflow-x-auto">
+	<div class="min-w-[860px]">
+		<svg
+			viewBox="0 0 1020 810"
+			class="w-full h-auto block select-none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<defs>
+				<!-- Flecha hacia arriba -->
+				<marker
+					id="arrow-up"
+					viewBox="0 0 10 10"
+					refX="5"
+					refY="5"
+					markerWidth="6"
+					markerHeight="6"
+					orient="auto-start-reverse"
+				>
+					<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+				</marker>
+			</defs>
+
+			<!-- ========================================== -->
+			<!-- LÍNEAS CONECTORAS / RAMAS Y RAÍCES         -->
+			<!-- ========================================== -->
+			<g id="lineas-conectoras" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Causas Indirectas -> Causas Directas (Columna 1) -->
+				<path d="M 185 705 L 185 673" marker-end="url(#arrow-up)" />
+				<path d="M 185 595 L 185 563" marker-end="url(#arrow-up)" />
+
+				<!-- Causas Indirectas -> Causas Directas (Columna 2) -->
+				<path d="M 510 705 L 510 673" marker-end="url(#arrow-up)" />
+				<path d="M 510 595 L 510 563" marker-end="url(#arrow-up)" />
+
+				<!-- Causas Indirectas -> Causas Directas (Columna 3) -->
+				<path d="M 835 705 L 835 673" marker-end="url(#arrow-up)" />
+				<path d="M 835 595 L 835 563" marker-end="url(#arrow-up)" />
+
+				<!-- Causas Directas -> Problema Central (Tronco) -->
+				<path d="M 185 480 L 185 462 L 508 462" />
+				<path d="M 835 480 L 835 462 L 512 462" />
+				<path d="M 510 480 L 510 443" marker-end="url(#arrow-up)" />
+
+				<!-- Problema Central -> Efecto Directo 1 -->
+				<path d="M 510 350 L 510 318" marker-end="url(#arrow-up)" />
+
+				<!-- Efecto Directo 1 -> Efectos Indirectos 1.1 y 1.2 -->
+				<path d="M 510 240 L 510 225" />
+				<path d="M 305 225 L 715 225" />
+				<path d="M 305 225 L 305 213" marker-end="url(#arrow-up)" />
+				<path d="M 715 225 L 715 213" marker-end="url(#arrow-up)" />
+
+				<!-- Efectos Indirectos -> Efecto Final -->
+				<path d="M 305 135 L 305 116 L 508 116" />
+				<path d="M 715 135 L 715 116 L 512 116" />
+				<path d="M 510 116 L 510 103" marker-end="url(#arrow-up)" />
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 1: EFECTO FINAL                      -->
+			<!-- ========================================== -->
+			<g id="nodo-efecto-final">
+				<rect
+					x="210"
+					y="25"
+					width="600"
+					height="75"
+					rx="12"
+					fill="#FFF1F2"
+					stroke="#FDA4AF"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="210" y="25" width="600" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 16px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #9F1239; margin-bottom: 2px;">
+							Efecto Final
+						</span>
+						<span style="font-size: 12.5px; font-weight: 600; color: #881337; line-height: 1.35;">
+							Pérdidas económicas por penalidades comerciales e incumplimiento de normativas de protección de información
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 2: EFECTOS INDIRECTOS                -->
+			<!-- ========================================== -->
+			<!-- Efecto Indirecto 1.1 -->
+			<g id="nodo-efecto-ind-1-1">
+				<rect
+					x="110"
+					y="135"
+					width="390"
+					height="75"
+					rx="10"
+					fill="#FFFBEB"
+					stroke="#FCD34D"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="110" y="135" width="390" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #B45309; margin-bottom: 2px;">
+							Efecto Indirecto 1.1
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #78350F; line-height: 1.35;">
+							Paralización operativa y retrasos severos en la cesión y desembolso de factoring
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Efecto Indirecto 1.2 -->
+			<g id="nodo-efecto-ind-1-2">
+				<rect
+					x="520"
+					y="135"
+					width="390"
+					height="75"
+					rx="10"
+					fill="#FFFBEB"
+					stroke="#FCD34D"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="520" y="135" width="390" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #B45309; margin-bottom: 2px;">
+							Efecto Indirecto 1.2
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #78350F; line-height: 1.35;">
+							Imposibilidad de auditoría forense y riesgo de fuga de información financiera sensible
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 3: EFECTO DIRECTO                    -->
+			<!-- ========================================== -->
+			<g id="nodo-efecto-directo-1">
+				<rect
+					x="230"
+					y="240"
+					width="560"
+					height="75"
+					rx="10"
+					fill="#FFEDD5"
+					stroke="#FDBA74"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="230" y="240" width="560" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 16px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #C2410C; margin-bottom: 2px;">
+							Efecto Directo 1
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #7C2D12; line-height: 1.35;">
+							Degradación crítica de la disponibilidad y confidencialidad en el enlace de red hacia la casa matriz en Chile
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 4: PROBLEMA CENTRAL (TRONCO)         -->
+			<!-- ========================================== -->
+			<g id="nodo-problema-central">
+				<rect
+					x="200"
+					y="350"
+					width="620"
+					height="90"
+					rx="12"
+					fill="#FEE2E2"
+					stroke="#EF4444"
+					stroke-width="2.5"
+				/>
+				<foreignObject x="200" y="350" width="620" height="90">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8px 18px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #991B1B; margin-bottom: 3px;">
+							PROBLEMA CENTRAL
+						</span>
+						<span style="font-size: 13.5px; font-weight: 700; color: #450A0A; line-height: 1.35;">
+							Alta vulnerabilidad de la infraestructura física y de telecomunicaciones en el cuarto de redes de la sede Lima
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 5: CAUSAS DIRECTAS (RAÍCES)          -->
+			<!-- ========================================== -->
+			<!-- Causa Directa 1 -->
+			<g id="nodo-causa-dir-1">
+				<rect
+					x="35"
+					y="480"
+					width="300"
+					height="80"
+					rx="10"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="480" width="300" height="80">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1D4ED8; margin-bottom: 2px;">
+							Causa Directa 1
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #1E3A8A; line-height: 1.35;">
+							Mecanismos de control perimetral vulnerables a accesos no autorizados
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Directa 2 -->
+			<g id="nodo-causa-dir-2">
+				<rect
+					x="360"
+					y="480"
+					width="300"
+					height="80"
+					rx="10"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="480" width="300" height="80">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1D4ED8; margin-bottom: 2px;">
+							Causa Directa 2
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #1E3A8A; line-height: 1.35;">
+							Exposición física del hardware de red a alteraciones y desconexiones mecánicas
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Directa 3 -->
+			<g id="nodo-causa-dir-3">
+				<rect
+					x="685"
+					y="480"
+					width="300"
+					height="80"
+					rx="10"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="685" y="480" width="300" height="80">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1D4ED8; margin-bottom: 2px;">
+							Causa Directa 3
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #1E3A8A; line-height: 1.35;">
+							Incapacidad de monitoreo continuo y pérdida de trazabilidad en el área técnica
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 6: CAUSAS INDIRECTAS                 -->
+			<!-- ========================================== -->
+
+			<!-- Fila 1: 1.1, 2.1, 3.1 -->
+			<!-- Causa Indirecta 1.1 -->
+			<g id="nodo-causa-ind-1-1">
+				<rect
+					x="35"
+					y="595"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="595" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 1.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Uso de cerraduras mecánicas convencionales sin identificación
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Indirecta 2.1 -->
+			<g id="nodo-causa-ind-2-1">
+				<rect
+					x="360"
+					y="595"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="595" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 2.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Estructura de bastidor abierto de cuatro postes de fácil acceso
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Indirecta 3.1 -->
+			<g id="nodo-causa-ind-3-1">
+				<rect
+					x="685"
+					y="595"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="685" y="595" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 3.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Supervisión presencial ciega y omisión de bitácoras de eventos
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Fila 2: 1.2, 2.2, 3.2 -->
+			<!-- Causa Indirecta 1.2 -->
+			<g id="nodo-causa-ind-1-2">
+				<rect
+					x="35"
+					y="705"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="705" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 1.2
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Tenencia de llaves en personal ajeno al área de TI (limpieza/mant.)
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Indirecta 2.2 -->
+			<g id="nodo-causa-ind-2-2">
+				<rect
+					x="360"
+					y="705"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="705" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 2.2
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Patch cords y módulos de conectividad expuestos al tacto y tránsito
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Causa Indirecta 3.2 -->
+			<g id="nodo-causa-ind-3-2">
+				<rect
+					x="685"
+					y="705"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#A7F3D0"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="685" y="705" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; margin-bottom: 2px;">
+							Causa Indirecta 3.2
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Vulnerabilidad ante fallas térmicas o contingencias ambientales en el recinto
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+		</svg>
+	</div>
+</div>

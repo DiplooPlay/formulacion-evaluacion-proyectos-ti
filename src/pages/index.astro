@@ -4,6 +4,12 @@ import TableOfContents from '../components/TableOfContents.astro';
 import StakeholderCanvas from '../components/StakeholderCanvas.astro';
 import StakeholderTable from '../components/StakeholderTable.astro';
 import BpmnDiagram from '../components/BpmnDiagram.astro';
+import ArbolProblema from '../components/ArbolProblema.astro';
+import ArbolObjetivo from '../components/ArbolObjetivo.astro';
+import DiagramasComponentes from '../components/DiagramasComponentes.astro';
+import ProyectosAlternativos from '../components/ProyectosAlternativos.astro';
+import CriteriosSeleccionTable from '../components/CriteriosSeleccionTable.astro';
+import CostoEfectividadTable from '../components/CostoEfectividadTable.astro';
 ---
 
 <Layout
@@ -332,6 +338,126 @@ import BpmnDiagram from '../components/BpmnDiagram.astro';
 						</ul>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 5: DIAGRAMAS                       -->
+		<!-- ========================================== -->
+		<section id="sec-5" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">
+				5. Diagramas
+			</h2>
+
+			<!-- 5.1 Arbol de problema -->
+			<div id="sec-5-1" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					5.1. Arbol de problema
+				</h3>
+				<ArbolProblema />
+			</div>
+
+			<!-- 5.2 Arbol de objetivo -->
+			<div id="sec-5-2" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					5.2. Arbol de objetivo
+				</h3>
+				<ArbolObjetivo />
+			</div>
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 6: ALTERNATIVAS DE INTERVENCIÓN    -->
+		<!-- ========================================== -->
+		<section id="sec-6" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">
+				6. Identificación y formulación de alternativas de intervención
+			</h2>
+
+			<!-- 6.1 Identificación de acciones por medio fundamental -->
+			<div id="sec-6-1" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					6.1. Identificación de acciones por medio fundamental
+				</h3>
+
+				<div class="space-y-4 text-neutral-700 leading-relaxed text-sm sm:text-base text-justify">
+					<div class="space-y-1.5">
+						<p>Medio Final 1.1: Instalación de cerraduras electrónicas/biométricas con identificación y registro de usuarios</p>
+						<ul class="list-disc pl-5 space-y-1">
+							<li>Acción A1.1a <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-amber-50 text-amber-700 border border-amber-200 align-middle">Excluyente</span>: Instalación de cerradura digital biométrica autónoma (standalone) con validación por huella dactilar, teclado numérico y registro interno de auditoría descargable vía USB.</li>
+							<li>Acción A1.1b <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-amber-50 text-amber-700 border border-amber-200 align-middle">Excluyente</span>: Implementación de sistema de control de acceso IP en red (lector RFID multifactor / biométrico corporativo) gestionado mediante servidor centralizado y licencias corporativas.</li>
+						</ul>
+					</div>
+
+					<div class="space-y-1.5">
+						<p>Medio Final 2.1: Sustitución de bastidores abiertos por gabinetes cerrados y estructurados con llave de seguridad</p>
+						<ul class="list-disc pl-5 space-y-1">
+							<li>Acción A2.1a <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-amber-50 text-amber-700 border border-amber-200 align-middle">Excluyente</span>: Adquisición e instalación de gabinete cerrado de piso estándar de 42RU con paneles laterales removibles y cerradura mecánica de seguridad.</li>
+							<li>Acción A2.1b <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-amber-50 text-amber-700 border border-amber-200 align-middle">Excluyente</span>: Adquisición y montaje de rack inteligente tipo Enterprise con puertas microperforadas de alto flujo térmico y manijas con cerradura electrónica integrada.</li>
+						</ul>
+					</div>
+
+					<div class="space-y-1.5">
+						<p>Medio Final 1.2: Restricción y custodia formal de llaves y credenciales exclusivamente para el personal autorizado de TI</p>
+						<ul class="list-disc pl-5 space-y-1">
+							<li>Acción A3.1 <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200 align-middle">Complementaria</span>: Elaborar la política de seguridad física bajo los controles de la norma ISO/IEC 27001 e instalar un cofre de pared con clave mecánica para la custodia exclusiva de llaves por parte del área de TI.</li>
+						</ul>
+					</div>
+
+					<div class="space-y-1.5">
+						<p>Medio Final 2.2: Canalización, peinado y rotulado adecuado de patch cords y módulos de conectividad</p>
+						<ul class="list-disc pl-5 space-y-1">
+							<li>Acción A3.2 <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200 align-middle">Complementaria</span>: Instalar organizadores horizontales de cableado de 2RU, peinar líneas de conexión y rotular los patch cords certificados bajo la norma ANSI/TIA-606.</li>
+						</ul>
+					</div>
+
+					<div class="space-y-1.5">
+						<p>Medio Final 3.1: Supervisión continua mediante bitácoras de eventos, videovigilancia y sensores de contingencia ambiental</p>
+						<ul class="list-disc pl-5 space-y-1">
+							<li>Acción A3.3 <span class="inline-block px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200 align-middle">Complementaria</span>: Instalar cámara de videovigilancia IP enfocada al gabinete, sensor termohigrómetro de alerta ambiental (temperatura y humedad) y formalizar la bitácora física de registro para personal externo y de limpieza.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- 6.2 Identificación y organización de acciones en proyectos alternativos -->
+			<div id="sec-6-2" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					6.2. Identificación y organización de acciones en proyectos alternativos
+				</h3>
+				<DiagramasComponentes />
+				<ProyectosAlternativos />
+			</div>
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 7: EVALUACIÓN Y JUSTIFICACIÓN      -->
+		<!-- ========================================== -->
+		<section id="sec-7" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">
+				7. Evaluación y justificación de alternativas
+			</h2>
+
+			<!-- 7.1 Evaluación de alternativas y justificación -->
+			<div id="sec-7-1" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					7.1. Evaluación de alternativas y justificación
+				</h3>
+				<CriteriosSeleccionTable />
+			</div>
+
+			<!-- 7.2 Análisis costo-beneficio y costo-efectividad -->
+			<div id="sec-7-2" class="mb-8 scroll-mt-20">
+				<h3 class="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
+					<span class="w-1.5 h-4 bg-neutral-900 rounded-full inline-block"></span>
+					7.2. Análisis costo-beneficio y costo-efectividad
+				</h3>
+				<CostoEfectividadTable />
 			</div>
 		</section>
 	</main>

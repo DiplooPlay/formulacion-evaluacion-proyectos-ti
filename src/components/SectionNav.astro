@@ -1,0 +1,164 @@
+---
+interface SectionItem {
+	id: string;
+	num: string;
+	title: string;
+	shortTitle?: string;
+}
+
+interface Props {
+	sections?: SectionItem[];
+}
+
+const defaultSections: SectionItem[] = [
+	{ id: "sec-1", num: "1", title: "Caso de negocio y diagnóstico situacional", shortTitle: "Caso de negocio y diagnóstico" },
+	{ id: "sec-2", num: "2", title: "Metodología y juicio de expertos", shortTitle: "Metodología y juicio de expertos" },
+	{ id: "sec-3", num: "3", title: "Identificación y clasificación de interesados", shortTitle: "Identificación de interesados" },
+	{ id: "sec-4", num: "4", title: "Factores ambientales de la empresa (EEF)", shortTitle: "Factores ambientales (EEF)" },
+	{ id: "sec-5", num: "5", title: "Diagramas", shortTitle: "Diagramas" },
+	{ id: "sec-6", num: "6", title: "Identificación y formulación de alternativas de intervención", shortTitle: "Alternativas de intervención" },
+	{ id: "sec-7", num: "7", title: "Evaluación y justificación de alternativas", shortTitle: "Evaluación de alternativas" },
+];
+
+const { sections = defaultSections } = Astro.props;
+---
+
+<!-- Barra lateral en pantallas grandes (xl) -->
+<aside
+	id="lateral-section-nav"
+	aria-label="Barra de desplazamiento por secciones"
+	class="hidden xl:block fixed top-36 left-[calc(50%+25.5rem)] w-56 2xl:w-64 z-30 select-none"
+>
+	<div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-2.5 font-semibold px-2.5">
+		Secciones
+	</div>
+
+	<div class="relative pl-3 border-l border-neutral-200">
+		<!-- Indicador activo dinámico sobre la línea vertical -->
+		<div
+			id="section-nav-indicator"
+			class="absolute left-[-1.5px] w-[2px] bg-neutral-900 rounded-full transition-all duration-200 ease-out"
+			style="top: 0px; height: 0px; opacity: 0;"
+		></div>
+
+		<ul class="space-y-1">
+			{sections.map((s) => (
+				<li>
+					<a
+						href={`#${s.id}`}
+						data-nav-target={s.id}
+						class="section-nav-item group flex items-start gap-2 py-1.5 px-2.5 rounded-lg text-xs text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100/70 transition-all duration-150"
+					>
+						<span class="font-mono text-[11px] text-neutral-400 group-hover:text-neutral-700 font-medium shrink-0 pt-0.5">
+							{s.num}.
+						</span>
+						<span class="leading-snug line-clamp-2">
+							{s.shortTitle || s.title}
+						</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</aside>
+
+<!-- Barra flotante compacta en pantallas medianas y móviles (< xl) -->
+<nav
+	aria-label="Navegación compacta por secciones"
+	class="xl:hidden fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-1.5 p-1.5 bg-white/90 backdrop-blur-md rounded-full border border-neutral-200 shadow-xs select-none"
+>
+	{sections.map((s) => (
+		<a
+			href={`#${s.id}`}
+			data-compact-target={s.id}
+			class="compact-nav-item w-7 h-7 flex items-center justify-center rounded-full text-[11px] font-mono text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-all duration-150"
+			title={s.title}
+			aria-label={s.title}
+		>
+			{s.num}
+		</a>
+	))}
+</nav>
+
+<script>
+	function initSectionNav() {
+		const sections = Array.from(document.querySelectorAll('section[id^="sec-"]')) as HTMLElement[];
+		if (!sections.length) return;
+
+		const desktopItems = Array.from(document.querySelectorAll('.section-nav-item')) as HTMLElement[];
+		const compactItems = Array.from(document.querySelectorAll('.compact-nav-item')) as HTMLElement[];
+		const indicator = document.getElementById('section-nav-indicator');
+
+		function updateNav() {
+			const scrollY = window.scrollY;
+			const windowHeight = window.innerHeight;
+			const docHeight = document.documentElement.scrollHeight;
+
+			// Si llegó al final de la página, activa la última sección
+			const isAtBottom = (windowHeight + scrollY) >= docHeight - 50;
+
+			let activeId = '';
+
+			if (isAtBottom) {
+				activeId = sections[sections.length - 1].id;
+			} else {
+				const scrollPosition = scrollY + 150;
+				for (let i = sections.length - 1; i >= 0; i--) {
+					const sec = sections[i];
+					if (sec.offsetTop <= scrollPosition) {
+						activeId = sec.id;
+						break;
+					}
+				}
+			}
+
+			// Actualizar navegación de escritorio
+			let activeDesktopItem: HTMLElement | null = null;
+			desktopItems.forEach((item) => {
+				const target = item.getAttribute('data-nav-target');
+				if (target === activeId) {
+					item.classList.add('text-neutral-950', 'font-semibold', 'bg-neutral-100');
+					item.classList.remove('text-neutral-500');
+					activeDesktopItem = item;
+				} else {
+					item.classList.remove('text-neutral-950', 'font-semibold', 'bg-neutral-100');
+					item.classList.add('text-neutral-500');
+				}
+			});
+
+			// Actualizar posición del indicador dinámico
+			if (indicator) {
+				if (activeDesktopItem) {
+					indicator.style.top = `${activeDesktopItem.offsetTop}px`;
+					indicator.style.height = `${activeDesktopItem.offsetHeight}px`;
+					indicator.style.opacity = '1';
+				} else {
+					indicator.style.opacity = '0';
+				}
+			}
+
+			// Actualizar navegación compacta
+			compactItems.forEach((item) => {
+				const target = item.getAttribute('data-compact-target');
+				if (target === activeId) {
+					item.classList.add('bg-neutral-900', 'text-white', 'font-bold', 'shadow-xs');
+					item.classList.remove('text-neutral-500', 'hover:bg-neutral-100');
+				} else {
+					item.classList.remove('bg-neutral-900', 'text-white', 'font-bold', 'shadow-xs');
+					item.classList.add('text-neutral-500', 'hover:bg-neutral-100');
+				}
+			});
+		}
+
+		window.addEventListener('scroll', updateNav, { passive: true });
+		window.addEventListener('resize', updateNav, { passive: true });
+		updateNav();
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initSectionNav);
+	} else {
+		initSectionNav();
+	}
+	document.addEventListener('astro:page-load', initSectionNav);
+</script>

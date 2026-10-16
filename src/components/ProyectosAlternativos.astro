@@ -1,0 +1,524 @@
+---
+// Componente SVG: Formulación de Proyectos Alternativos (Horizontal)
+---
+
+<div class="my-6 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs overflow-x-auto">
+	<div class="min-w-[880px]">
+		<svg
+			viewBox="0 0 960 265"
+			class="w-full h-auto block select-none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<defs>
+				<marker
+					id="arrow-right-proj"
+					viewBox="0 0 10 10"
+					refX="5"
+					refY="5"
+					markerWidth="6"
+					markerHeight="6"
+					orient="auto"
+				>
+					<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+				</marker>
+			</defs>
+
+			<!-- ========================================== -->
+			<!-- FILA 1: PROYECTO ALTERNATIVO 1             -->
+			<!-- ========================================== -->
+
+			<!-- Líneas conectoras Fila 1 -->
+			<g fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Header -> [=] -->
+				<path d="M 260 68 L 282 68" marker-end="url(#arrow-right-proj)" />
+				<!-- [=] -> A1.1a -->
+				<path d="M 315 68 L 337 68" marker-end="url(#arrow-right-proj)" />
+				<!-- A1.1a -> [+] -->
+				<path d="M 415 68 L 437 68" marker-end="url(#arrow-right-proj)" />
+				<!-- [+] -> A2.1a -->
+				<path d="M 470 68 L 492 68" marker-end="url(#arrow-right-proj)" />
+				<!-- A2.1a -> [+] -->
+				<path d="M 570 68 L 592 68" marker-end="url(#arrow-right-proj)" />
+				<!-- [+] -> A3.1 -->
+				<path d="M 625 68 L 647 68" marker-end="url(#arrow-right-proj)" />
+				<!-- A3.1 -> A3.2 -->
+				<path d="M 725 68 L 747 68" marker-end="url(#arrow-right-proj)" />
+				<!-- A3.2 -> A3.3 -->
+				<path d="M 825 68 L 847 68" marker-end="url(#arrow-right-proj)" />
+			</g>
+
+			<!-- Header Proyecto Alternativo 1 -->
+			<g id="header-pa1">
+				<rect
+					x="30"
+					y="30"
+					width="230"
+					height="76"
+					rx="10"
+					fill="#FFFBEB"
+					stroke="#FCD34D"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="30" y="30" width="230" height="76">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4px 10px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #92400E; margin-bottom: 2px;">
+							PROYECTO ALTERNATIVO 1
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #78350F; line-height: 1.25;">
+							Adecuación Físico-Operativa Local
+						</span>
+						<span style="font-size: 10px; color: #B45309; line-height: 1.2; margin-top: 2px;">
+							(Solución Rápida y Económica)
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Operador [=] Fila 1 -->
+			<g id="op-equal-1">
+				<rect
+					x="285"
+					y="53"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="300"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>=</text>
+			</g>
+
+			<!-- Nodo A1.1a -->
+			<g id="nodo-a1-1a">
+				<rect
+					x="340"
+					y="45"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#FEF3C7"
+					stroke="#F59E0B"
+					stroke-width="1.5"
+				/>
+				<text
+					x="377"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#78350F"
+				>A1.1a</text>
+			</g>
+
+			<!-- Operador [+] Fila 1 -->
+			<g id="op-plus-1a">
+				<rect
+					x="440"
+					y="53"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="455"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>+</text>
+			</g>
+
+			<!-- Nodo A2.1a -->
+			<g id="nodo-a2-1a">
+				<rect
+					x="495"
+					y="45"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#FEF3C7"
+					stroke="#F59E0B"
+					stroke-width="1.5"
+				/>
+				<text
+					x="532"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#78350F"
+				>A2.1a</text>
+			</g>
+
+			<!-- Operador [+] Fila 1 -->
+			<g id="op-plus-1b">
+				<rect
+					x="595"
+					y="53"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="610"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>+</text>
+			</g>
+
+			<!-- Nodo A3.1 Fila 1 -->
+			<g id="nodo-a3-1-f1">
+				<rect
+					x="650"
+					y="45"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="687"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.1</text>
+			</g>
+
+			<!-- Nodo A3.2 Fila 1 -->
+			<g id="nodo-a3-2-f1">
+				<rect
+					x="750"
+					y="45"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="787"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.2</text>
+			</g>
+
+			<!-- Nodo A3.3 Fila 1 -->
+			<g id="nodo-a3-3-f1">
+				<rect
+					x="850"
+					y="45"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="887"
+					y="68"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.3</text>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- LÍNEA SEPARADORA SUTIL                     -->
+			<!-- ========================================== -->
+			<line x1="30" y1="132" x2="925" y2="132" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 4" />
+
+			<!-- ========================================== -->
+			<!-- FILA 2: PROYECTO ALTERNATIVO 2             -->
+			<!-- ========================================== -->
+
+			<!-- Líneas conectoras Fila 2 -->
+			<g fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Header -> [=] -->
+				<path d="M 260 198 L 282 198" marker-end="url(#arrow-right-proj)" />
+				<!-- [=] -> A1.1b -->
+				<path d="M 315 198 L 337 198" marker-end="url(#arrow-right-proj)" />
+				<!-- A1.1b -> [+] -->
+				<path d="M 415 198 L 437 198" marker-end="url(#arrow-right-proj)" />
+				<!-- [+] -> A2.1b -->
+				<path d="M 470 198 L 492 198" marker-end="url(#arrow-right-proj)" />
+				<!-- A2.1b -> [+] -->
+				<path d="M 570 198 L 592 198" marker-end="url(#arrow-right-proj)" />
+				<!-- [+] -> A3.1 -->
+				<path d="M 625 198 L 647 198" marker-end="url(#arrow-right-proj)" />
+				<!-- A3.1 -> A3.2 -->
+				<path d="M 725 198 L 747 198" marker-end="url(#arrow-right-proj)" />
+				<!-- A3.2 -> A3.3 -->
+				<path d="M 825 198 L 847 198" marker-end="url(#arrow-right-proj)" />
+			</g>
+
+			<!-- Header Proyecto Alternativo 2 -->
+			<g id="header-pa2">
+				<rect
+					x="30"
+					y="160"
+					width="230"
+					height="76"
+					rx="10"
+					fill="#F0FDF4"
+					stroke="#86EFAC"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="30" y="160" width="230" height="76">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4px 10px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #15803D; margin-bottom: 2px;">
+							PROYECTO ALTERNATIVO 2
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #064E3B; line-height: 1.25;">
+							Modernización Estructurada Enterprise
+						</span>
+						<span style="font-size: 10px; color: #047857; line-height: 1.2; margin-top: 2px;">
+							(Solución de Alta Disponibilidad)
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Operador [=] Fila 2 -->
+			<g id="op-equal-2">
+				<rect
+					x="285"
+					y="183"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="300"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>=</text>
+			</g>
+
+			<!-- Nodo A1.1b -->
+			<g id="nodo-a1-1b">
+				<rect
+					x="340"
+					y="175"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#D1FAE5"
+					stroke="#10B981"
+					stroke-width="1.5"
+				/>
+				<text
+					x="377"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#064E3B"
+				>A1.1b</text>
+			</g>
+
+			<!-- Operador [+] Fila 2 -->
+			<g id="op-plus-2a">
+				<rect
+					x="440"
+					y="183"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="455"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>+</text>
+			</g>
+
+			<!-- Nodo A2.1b -->
+			<g id="nodo-a2-1b">
+				<rect
+					x="495"
+					y="175"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#D1FAE5"
+					stroke="#10B981"
+					stroke-width="1.5"
+				/>
+				<text
+					x="532"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#064E3B"
+				>A2.1b</text>
+			</g>
+
+			<!-- Operador [+] Fila 2 -->
+			<g id="op-plus-2b">
+				<rect
+					x="595"
+					y="183"
+					width="30"
+					height="30"
+					rx="6"
+					fill="#F1F5F9"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<text
+					x="610"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="13"
+					font-weight="700"
+					fill="#475569"
+				>+</text>
+			</g>
+
+			<!-- Nodo A3.1 Fila 2 -->
+			<g id="nodo-a3-1-f2">
+				<rect
+					x="650"
+					y="175"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="687"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.1</text>
+			</g>
+
+			<!-- Nodo A3.2 Fila 2 -->
+			<g id="nodo-a3-2-f2">
+				<rect
+					x="750"
+					y="175"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="787"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.2</text>
+			</g>
+
+			<!-- Nodo A3.3 Fila 2 -->
+			<g id="nodo-a3-3-f2">
+				<rect
+					x="850"
+					y="175"
+					width="75"
+					height="46"
+					rx="8"
+					fill="#EFF6FF"
+					stroke="#93C5FD"
+					stroke-width="1.5"
+				/>
+				<text
+					x="887"
+					y="198"
+					dominant-baseline="central"
+					text-anchor="middle"
+					font-family="ui-monospace, monospace"
+					font-size="12"
+					font-weight="700"
+					fill="#1E40AF"
+				>A3.3</text>
+			</g>
+		</svg>
+	</div>
+</div>

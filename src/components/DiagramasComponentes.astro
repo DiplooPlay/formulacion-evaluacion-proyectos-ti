@@ -1,0 +1,604 @@
+---
+// Componentes SVG: Identificación y organización de acciones en proyectos alternativos
+---
+
+<div class="my-6 space-y-3">
+	<!-- Botones de selección horizontal -->
+	<div class="flex flex-nowrap items-center gap-1.5 p-1 bg-neutral-100 rounded-xl max-w-full overflow-x-auto border border-neutral-200/80">
+		<button
+			type="button"
+			data-tab-target="tab-comp-1"
+			class="diagram-tab-btn shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 bg-white text-neutral-900 shadow-xs border border-neutral-200/60 cursor-pointer"
+		>
+			Control perimetral
+		</button>
+		<button
+			type="button"
+			data-tab-target="tab-comp-2"
+			class="diagram-tab-btn shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 text-neutral-600 hover:text-neutral-900 hover:bg-white/50 cursor-pointer"
+		>
+			Confinamiento de hardware
+		</button>
+		<button
+			type="button"
+			data-tab-target="tab-comp-3"
+			class="diagram-tab-btn shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 text-neutral-600 hover:text-neutral-900 hover:bg-white/50 cursor-pointer"
+		>
+			Gobernanza y monitoreo
+		</button>
+	</div>
+
+	<!-- ========================================== -->
+	<!-- COMPONENTE 1: CONTROL PERIMETRAL          -->
+	<!-- ========================================== -->
+	<div id="tab-comp-1" class="diagram-tab-panel rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs overflow-x-auto">
+		<div class="min-w-[700px]">
+			<svg
+				viewBox="0 0 760 300"
+				class="w-full h-auto block select-none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<defs>
+					<marker
+						id="arrow-down-c1"
+						viewBox="0 0 10 10"
+						refX="5"
+						refY="5"
+						markerWidth="6"
+						markerHeight="6"
+						orient="auto"
+					>
+						<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+					</marker>
+				</defs>
+
+				<!-- Líneas conectoras -->
+				<g fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+					<!-- Padre -> Ramas horizontales -->
+					<path d="M 380 85 L 380 105" />
+					<path d="M 200 105 L 560 105" />
+					<path d="M 200 105 L 200 122" marker-end="url(#arrow-down-c1)" />
+					<path d="M 560 105 L 560 122" marker-end="url(#arrow-down-c1)" />
+
+					<!-- Código -> Contenido -->
+					<path d="M 200 157 L 200 178" marker-end="url(#arrow-down-c1)" />
+					<path d="M 560 157 L 560 178" marker-end="url(#arrow-down-c1)" />
+				</g>
+
+				<!-- Caja Padre -->
+				<g id="comp1-padre">
+					<rect
+						x="90"
+						y="20"
+						width="580"
+						height="65"
+						rx="10"
+						fill="#EFF6FF"
+						stroke="#93C5FD"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="90" y="20" width="580" height="65">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1D4ED8; margin-bottom: 2px;">
+								COMPONENTE 1: CONTROL PERIMETRAL
+							</span>
+							<span style="font-size: 12px; font-weight: 600; color: #1E3A8A; line-height: 1.3;">
+								Medio Fundamental 1.1: Cerraduras electrónicas y registro de usuarios
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A1.1a -->
+				<g id="comp1-code-a">
+					<rect
+						x="155"
+						y="125"
+						width="90"
+						height="32"
+						rx="6"
+						fill="#FEF3C7"
+						stroke="#FCD34D"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="155" y="125" width="90" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #78350F;"
+						>
+							A1.1a
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A1.1b -->
+				<g id="comp1-code-b">
+					<rect
+						x="515"
+						y="125"
+						width="90"
+						height="32"
+						rx="6"
+						fill="#FEF3C7"
+						stroke="#FCD34D"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="515" y="125" width="90" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #78350F;"
+						>
+							A1.1b
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A1.1a -->
+				<g id="comp1-desc-a">
+					<rect
+						x="50"
+						y="180"
+						width="300"
+						height="95"
+						rx="10"
+						fill="#FFFBEB"
+						stroke="#FDE68A"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="50" y="180" width="300" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11.5px; font-weight: 600; color: #78350F; line-height: 1.35; margin-bottom: 3px;">
+								Instalación de cerradura digital biométrica autónoma
+							</span>
+							<span style="font-size: 11px; color: #92400E; line-height: 1.3;">
+								(Huella + clave local y descarga USB)
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A1.1b -->
+				<g id="comp1-desc-b">
+					<rect
+						x="410"
+						y="180"
+						width="300"
+						height="95"
+						rx="10"
+						fill="#FFFBEB"
+						stroke="#FDE68A"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="410" y="180" width="300" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11.5px; font-weight: 600; color: #78350F; line-height: 1.35; margin-bottom: 3px;">
+								Despliegue de control de acceso IP centralizado
+							</span>
+							<span style="font-size: 11px; color: #92400E; line-height: 1.3;">
+								(Lector RFID multifactor administrado por red)
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+			</svg>
+		</div>
+	</div>
+
+	<!-- ========================================== -->
+	<!-- COMPONENTE 2: CONFINAMIENTO DE HARDWARE   -->
+	<!-- ========================================== -->
+	<div id="tab-comp-2" class="diagram-tab-panel hidden rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs overflow-x-auto">
+		<div class="min-w-[700px]">
+			<svg
+				viewBox="0 0 760 300"
+				class="w-full h-auto block select-none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<defs>
+					<marker
+						id="arrow-down-c2"
+						viewBox="0 0 10 10"
+						refX="5"
+						refY="5"
+						markerWidth="6"
+						markerHeight="6"
+						orient="auto"
+					>
+						<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+					</marker>
+				</defs>
+
+				<!-- Líneas conectoras -->
+				<g fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+					<!-- Padre -> Ramas horizontales -->
+					<path d="M 380 85 L 380 105" />
+					<path d="M 200 105 L 560 105" />
+					<path d="M 200 105 L 200 122" marker-end="url(#arrow-down-c2)" />
+					<path d="M 560 105 L 560 122" marker-end="url(#arrow-down-c2)" />
+
+					<!-- Código -> Contenido -->
+					<path d="M 200 157 L 200 178" marker-end="url(#arrow-down-c2)" />
+					<path d="M 560 157 L 560 178" marker-end="url(#arrow-down-c2)" />
+				</g>
+
+				<!-- Caja Padre -->
+				<g id="comp2-padre">
+					<rect
+						x="90"
+						y="20"
+						width="580"
+						height="65"
+						rx="10"
+						fill="#F0FDF4"
+						stroke="#86EFAC"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="90" y="20" width="580" height="65">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #15803D; margin-bottom: 2px;">
+								COMPONENTE 2: CONFINAMIENTO DE HARDWARE
+							</span>
+							<span style="font-size: 12px; font-weight: 600; color: #064E3B; line-height: 1.3;">
+								Medio Fundamental 2.1: Gabinetes cerrados y estructurados con llave
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A2.1a -->
+				<g id="comp2-code-a">
+					<rect
+						x="155"
+						y="125"
+						width="90"
+						height="32"
+						rx="6"
+						fill="#FEF3C7"
+						stroke="#FCD34D"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="155" y="125" width="90" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #78350F;"
+						>
+							A2.1a
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A2.1b -->
+				<g id="comp2-code-b">
+					<rect
+						x="515"
+						y="125"
+						width="90"
+						height="32"
+						rx="6"
+						fill="#FEF3C7"
+						stroke="#FCD34D"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="515" y="125" width="90" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #78350F;"
+						>
+							A2.1b
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A2.1a -->
+				<g id="comp2-desc-a">
+					<rect
+						x="50"
+						y="180"
+						width="300"
+						height="95"
+						rx="10"
+						fill="#FFFBEB"
+						stroke="#FDE68A"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="50" y="180" width="300" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11.5px; font-weight: 600; color: #78350F; line-height: 1.35; margin-bottom: 3px;">
+								Adquisición y montaje directo de gabinete cerrado de 42U
+							</span>
+							<span style="font-size: 11px; color: #92400E; line-height: 1.3;">
+								(Paneles ciegos y chapa de llave física)
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A2.1b -->
+				<g id="comp2-desc-b">
+					<rect
+						x="410"
+						y="180"
+						width="300"
+						height="95"
+						rx="10"
+						fill="#FFFBEB"
+						stroke="#FDE68A"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="410" y="180" width="300" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11.5px; font-weight: 600; color: #78350F; line-height: 1.35; margin-bottom: 3px;">
+								Servicio integral de suministro e instalación de rack enterprise
+							</span>
+							<span style="font-size: 11px; color: #92400E; line-height: 1.3;">
+								(Flujo térmico microperforado y manija de combinación)
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+			</svg>
+		</div>
+	</div>
+
+	<!-- ========================================== -->
+	<!-- COMPONENTE 3: GOBERNANZA, CABLEADO...      -->
+	<!-- ========================================== -->
+	<div id="tab-comp-3" class="diagram-tab-panel hidden rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs overflow-x-auto">
+		<div class="min-w-[760px]">
+			<svg
+				viewBox="0 0 860 300"
+				class="w-full h-auto block select-none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<defs>
+					<marker
+						id="arrow-down-c3"
+						viewBox="0 0 10 10"
+						refX="5"
+						refY="5"
+						markerWidth="6"
+						markerHeight="6"
+						orient="auto"
+					>
+						<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+					</marker>
+				</defs>
+
+				<!-- Líneas conectoras -->
+				<g fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+					<!-- Padre -> Ramas horizontales -->
+					<path d="M 430 85 L 430 105" />
+					<path d="M 150 105 L 710 105" />
+					<path d="M 150 105 L 150 122" marker-end="url(#arrow-down-c3)" />
+					<path d="M 430 85 L 430 122" marker-end="url(#arrow-down-c3)" />
+					<path d="M 710 105 L 710 122" marker-end="url(#arrow-down-c3)" />
+
+					<!-- Códigos -> Contenidos -->
+					<path d="M 150 157 L 150 178" marker-end="url(#arrow-down-c3)" />
+					<path d="M 430 157 L 430 178" marker-end="url(#arrow-down-c3)" />
+					<path d="M 710 157 L 710 178" marker-end="url(#arrow-down-c3)" />
+				</g>
+
+				<!-- Caja Padre -->
+				<g id="comp3-padre">
+					<rect
+						x="110"
+						y="20"
+						width="640"
+						height="65"
+						rx="10"
+						fill="#FAF5FF"
+						stroke="#D8B4FE"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="110" y="20" width="640" height="65">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #7E22CE; margin-bottom: 2px;">
+								COMPONENTE 3: GOBERNANZA, CABLEADO Y MONITOREO
+							</span>
+							<span style="font-size: 12px; font-weight: 600; color: #4C1D95; line-height: 1.3;">
+								Medios Fundamentales 1.2, 2.2 y 3.1: Políticas, organización física y trazabilidad
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A3.1 -->
+				<g id="comp3-code-1">
+					<rect
+						x="110"
+						y="125"
+						width="80"
+						height="32"
+						rx="6"
+						fill="#EFF6FF"
+						stroke="#BFDBFE"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="110" y="125" width="80" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #1E40AF;"
+						>
+							A3.1
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A3.2 -->
+				<g id="comp3-code-2">
+					<rect
+						x="390"
+						y="125"
+						width="80"
+						height="32"
+						rx="6"
+						fill="#EFF6FF"
+						stroke="#BFDBFE"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="390" y="125" width="80" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #1E40AF;"
+						>
+							A3.2
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Código A3.3 -->
+				<g id="comp3-code-3">
+					<rect
+						x="670"
+						y="125"
+						width="80"
+						height="32"
+						rx="6"
+						fill="#EFF6FF"
+						stroke="#BFDBFE"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="670" y="125" width="80" height="32">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; justify-content: center; align-items: center; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700; color: #1E40AF;"
+						>
+							A3.3
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A3.1 -->
+				<g id="comp3-desc-1">
+					<rect
+						x="25"
+						y="180"
+						width="250"
+						height="95"
+						rx="10"
+						fill="#F0FDF4"
+						stroke="#BBF7D0"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="25" y="180" width="250" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 500; color: #064E3B; line-height: 1.35;">
+								Elaborar protocolo ISO 27001 de custodia de llaves y restricción de personal ajeno a TI
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A3.2 -->
+				<g id="comp3-desc-2">
+					<rect
+						x="305"
+						y="180"
+						width="250"
+						height="95"
+						rx="10"
+						fill="#F0FDF4"
+						stroke="#BBF7D0"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="305" y="180" width="250" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 500; color: #064E3B; line-height: 1.35;">
+								Reordenamiento, rotulado normativo y peinado de patch cords
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+
+				<!-- Contenido A3.3 -->
+				<g id="comp3-desc-3">
+					<rect
+						x="585"
+						y="180"
+						width="250"
+						height="95"
+						rx="10"
+						fill="#F0FDF4"
+						stroke="#BBF7D0"
+						stroke-width="1.5"
+					/>
+					<foreignObject x="585" y="180" width="250" height="95">
+						<div
+							xmlns="http://www.w3.org/1999/xhtml"
+							style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+						>
+							<span style="font-size: 11px; font-weight: 500; color: #064E3B; line-height: 1.35;">
+								Instalación de cámara de videovigilancia, bitácora de accesos y termohigrómetro
+							</span>
+						</div>
+					</foreignObject>
+				</g>
+			</svg>
+		</div>
+	</div>
+</div>
+
+<script>
+	function initDiagramTabs() {
+		const tabButtons = document.querySelectorAll('.diagram-tab-btn');
+		const tabPanels = document.querySelectorAll('.diagram-tab-panel');
+
+		tabButtons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const targetId = btn.getAttribute('data-tab-target');
+
+				// Actualizar estado visual de los botones
+				tabButtons.forEach((b) => {
+					b.classList.remove('bg-white', 'text-neutral-900', 'shadow-xs', 'border', 'border-neutral-200/60');
+					b.classList.add('text-neutral-600', 'hover:text-neutral-900', 'hover:bg-white/50');
+				});
+				btn.classList.add('bg-white', 'text-neutral-900', 'shadow-xs', 'border', 'border-neutral-200/60');
+				btn.classList.remove('text-neutral-600', 'hover:text-neutral-900', 'hover:bg-white/50');
+
+				// Mostrar el panel seleccionado y ocultar los demás
+				tabPanels.forEach((panel) => {
+					if (panel.id === targetId) {
+						panel.classList.remove('hidden');
+					} else {
+						panel.classList.add('hidden');
+					}
+				});
+			});
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initDiagramTabs);
+	} else {
+		initDiagramTabs();
+	}
+	document.addEventListener('astro:page-load', initDiagramTabs);
+</script>

@@ -1,0 +1,432 @@
+---
+// Componente SVG: Árbol de Objetivos
+---
+
+<div class="my-6 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6 shadow-xs overflow-x-auto">
+	<div class="min-w-[860px]">
+		<svg
+			viewBox="0 0 1020 820"
+			class="w-full h-auto block select-none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<defs>
+				<!-- Flecha hacia arriba -->
+				<marker
+					id="arrow-up-obj"
+					viewBox="0 0 10 10"
+					refX="5"
+					refY="5"
+					markerWidth="6"
+					markerHeight="6"
+					orient="auto-start-reverse"
+				>
+					<path d="M 1 2 L 8 5 L 1 8 z" fill="#94A3B8" />
+				</marker>
+			</defs>
+
+			<!-- ========================================== -->
+			<!-- LÍNEAS CONECTORAS / RAMAS Y RAÍCES         -->
+			<!-- ========================================== -->
+			<g id="lineas-conectoras-obj" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Medios Finales -> Medios Directos (Columna 1) -->
+				<path d="M 185 715 L 185 683" marker-end="url(#arrow-up-obj)" />
+				<path d="M 185 605 L 185 573" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Medios Finales -> Medios Directos (Columna 2) -->
+				<path d="M 510 715 L 510 683" marker-end="url(#arrow-up-obj)" />
+				<path d="M 510 605 L 510 573" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Medio Final 3.1 -> Medio Directo 3 (Columna 3) -->
+				<path d="M 835 640 L 835 573" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Medios Directos -> Objetivo Central (Tronco) -->
+				<path d="M 185 485 L 185 467 L 508 467" />
+				<path d="M 835 485 L 835 467 L 512 467" />
+				<path d="M 510 485 L 510 448" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Objetivo Central -> Fin Directo 1 -->
+				<path d="M 510 350 L 510 318" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Fin Directo 1 -> Fines Indirectos 1.1 y 1.2 -->
+				<path d="M 510 240 L 510 225" />
+				<path d="M 305 225 L 715 225" />
+				<path d="M 305 225 L 305 213" marker-end="url(#arrow-up-obj)" />
+				<path d="M 715 225 L 715 213" marker-end="url(#arrow-up-obj)" />
+
+				<!-- Fines Indirectos -> Fin Final -->
+				<path d="M 305 135 L 305 116 L 508 116" />
+				<path d="M 715 135 L 715 116 L 512 116" />
+				<path d="M 510 116 L 510 103" marker-end="url(#arrow-up-obj)" />
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 1: FIN FINAL                         -->
+			<!-- ========================================== -->
+			<g id="nodo-fin-final">
+				<rect
+					x="210"
+					y="25"
+					width="600"
+					height="75"
+					rx="12"
+					fill="#ECFDF5"
+					stroke="#6EE7B7"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="210" y="25" width="600" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 16px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #047857; margin-bottom: 2px;">
+							Fin Final
+						</span>
+						<span style="font-size: 12.5px; font-weight: 600; color: #064E3B; line-height: 1.35;">
+							Prevención de pérdidas económicas por penalidades comerciales e incumplimiento de normativas de protección de información
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 2: FINES INDIRECTOS                  -->
+			<!-- ========================================== -->
+			<!-- Fin Indirecto 1.1 -->
+			<g id="nodo-fin-ind-1-1">
+				<rect
+					x="110"
+					y="135"
+					width="390"
+					height="75"
+					rx="10"
+					fill="#F0FDFA"
+					stroke="#5EEAD4"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="110" y="135" width="390" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0F766E; margin-bottom: 2px;">
+							Fin Indirecto 1.1
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #134E4A; line-height: 1.35;">
+							Continuidad operativa garantizada y procesamiento oportuno en la cesión y desembolso de factoring
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Fin Indirecto 1.2 -->
+			<g id="nodo-fin-ind-1-2">
+				<rect
+					x="520"
+					y="135"
+					width="390"
+					height="75"
+					rx="10"
+					fill="#F0FDFA"
+					stroke="#5EEAD4"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="520" y="135" width="390" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 14px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0F766E; margin-bottom: 2px;">
+							Fin Indirecto 1.2
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #134E4A; line-height: 1.35;">
+							Capacidad de auditoría forense habilitada y mitigación del riesgo de fuga de información financiera sensible
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 3: FIN DIRECTO                       -->
+			<!-- ========================================== -->
+			<g id="nodo-fin-directo-1">
+				<rect
+					x="230"
+					y="240"
+					width="560"
+					height="75"
+					rx="10"
+					fill="#F0F9FF"
+					stroke="#7DD3FC"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="230" y="240" width="560" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 16px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0369A1; margin-bottom: 2px;">
+							Fin Directo 1
+						</span>
+						<span style="font-size: 12px; font-weight: 600; color: #0C4A6E; line-height: 1.35;">
+							Alta disponibilidad y confidencialidad asegurada en el enlace de red hacia la casa matriz en Chile
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 4: OBJETIVO CENTRAL (TRONCO)         -->
+			<!-- ========================================== -->
+			<g id="nodo-objetivo-central">
+				<rect
+					x="190"
+					y="350"
+					width="640"
+					height="95"
+					rx="12"
+					fill="#EFF6FF"
+					stroke="#3B82F6"
+					stroke-width="2.5"
+				/>
+				<foreignObject x="190" y="350" width="640" height="95">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8px 18px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #1D4ED8; margin-bottom: 3px;">
+							OBJETIVO CENTRAL
+						</span>
+						<span style="font-size: 12.5px; font-weight: 700; color: #1E3A8A; line-height: 1.35;">
+							Fortalecer la seguridad física y operativa del cuarto de redes de la sede Lima bajo los controles de la norma ISO/IEC 27001, alcanzando el 100% de conformidad en los criterios de aceptación en un plazo de 45 días.
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 5: MEDIOS DIRECTOS (RAÍCES)          -->
+			<!-- ========================================== -->
+			<!-- Medio Directo 1 -->
+			<g id="nodo-medio-dir-1">
+				<rect
+					x="35"
+					y="485"
+					width="300"
+					height="85"
+					rx="10"
+					fill="#FAF5FF"
+					stroke="#D8B4FE"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="485" width="300" height="85">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #7E22CE; margin-bottom: 2px;">
+							Medio Directo 1
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #581C87; line-height: 1.35;">
+							Implementación de mecanismos de control perimetral resistentes contra accesos no autorizados
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Medio Directo 2 -->
+			<g id="nodo-medio-dir-2">
+				<rect
+					x="360"
+					y="485"
+					width="300"
+					height="85"
+					rx="10"
+					fill="#FAF5FF"
+					stroke="#D8B4FE"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="485" width="300" height="85">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #7E22CE; margin-bottom: 2px;">
+							Medio Directo 2
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #581C87; line-height: 1.35;">
+							Protección y resguardo físico del hardware de red ante manipulaciones y desconexiones mecánicas
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Medio Directo 3 -->
+			<g id="nodo-medio-dir-3">
+				<rect
+					x="685"
+					y="485"
+					width="300"
+					height="85"
+					rx="10"
+					fill="#FAF5FF"
+					stroke="#D8B4FE"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="685" y="485" width="300" height="85">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #7E22CE; margin-bottom: 2px;">
+							Medio Directo 3
+						</span>
+						<span style="font-size: 11.5px; font-weight: 600; color: #581C87; line-height: 1.35;">
+							Capacidad de monitoreo continuo, control ambiental y aseguramiento de trazabilidad en el área técnica
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 6: MEDIOS FINALES                    -->
+			<!-- ========================================== -->
+
+			<!-- Fila 1: 1.1 y 2.1 -->
+			<!-- Medio Final 1.1 -->
+			<g id="nodo-medio-fin-1-1">
+				<rect
+					x="35"
+					y="605"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F8FAFC"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="605" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; margin-bottom: 2px;">
+							Medio Final 1.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #0F172A; line-height: 1.35;">
+							Instalación de cerraduras electrónicas/biométricas con identificación y registro de usuarios
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Medio Final 2.1 -->
+			<g id="nodo-medio-fin-2-1">
+				<rect
+					x="360"
+					y="605"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F8FAFC"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="605" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; margin-bottom: 2px;">
+							Medio Final 2.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #0F172A; line-height: 1.35;">
+							Sustitución de bastidores abiertos por gabinetes cerrados y estructurados con llave de seguridad
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Medio Final 3.1 (Centrado en columna 3) -->
+			<g id="nodo-medio-fin-3-1">
+				<rect
+					x="685"
+					y="640"
+					width="300"
+					height="85"
+					rx="10"
+					fill="#F8FAFC"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="685" y="640" width="300" height="85">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; margin-bottom: 2px;">
+							Medio Final 3.1
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #0F172A; line-height: 1.35;">
+							Supervisión continua mediante bitácoras de eventos, videovigilancia y sensores de contingencia ambiental
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Fila 2: 1.2 y 2.2 -->
+			<!-- Medio Final 1.2 -->
+			<g id="nodo-medio-fin-1-2">
+				<rect
+					x="35"
+					y="715"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F8FAFC"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="35" y="715" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; margin-bottom: 2px;">
+							Medio Final 1.2
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #0F172A; line-height: 1.35;">
+							Restricción y custodia formal de llaves y credenciales exclusivamente para el personal autorizado de TI
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+
+			<!-- Medio Final 2.2 -->
+			<g id="nodo-medio-fin-2-2">
+				<rect
+					x="360"
+					y="715"
+					width="300"
+					height="75"
+					rx="10"
+					fill="#F8FAFC"
+					stroke="#CBD5E1"
+					stroke-width="1.5"
+				/>
+				<foreignObject x="360" y="715" width="300" height="75">
+					<div
+						xmlns="http://www.w3.org/1999/xhtml"
+						style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px 12px; box-sizing: border-box; font-family: ui-sans-serif, system-ui, sans-serif;"
+					>
+						<span style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; margin-bottom: 2px;">
+							Medio Final 2.2
+						</span>
+						<span style="font-size: 11px; font-weight: 600; color: #0F172A; line-height: 1.35;">
+							Canalización, peinado y rotulado adecuado de patch cords y módulos de conectividad
+						</span>
+					</div>
+				</foreignObject>
+			</g>
+		</svg>
+	</div>
+</div>

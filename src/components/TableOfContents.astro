@@ -22,6 +22,15 @@ const defaultSections: SectionItem[] = [
 	{ id: "sec-4", num: "4", title: "Factores ambientales de la empresa (EEF)" },
 	{ id: "sec-4-1", num: "4.1", title: "Organigrama y gobernanza regional" },
 	{ id: "sec-4-2", num: "4.2", title: "Condiciones de infraestructura y restricciones" },
+	{ id: "sec-5", num: "5", title: "Diagramas" },
+	{ id: "sec-5-1", num: "5.1", title: "Arbol de problema" },
+	{ id: "sec-5-2", num: "5.2", title: "Arbol de objetivo" },
+	{ id: "sec-6", num: "6", title: "Identificación y formulación de alternativas de intervención" },
+	{ id: "sec-6-1", num: "6.1", title: "Identificación de acciones por medio fundamental" },
+	{ id: "sec-6-2", num: "6.2", title: "Identificación y organización de acciones en proyectos alternativos" },
+	{ id: "sec-7", num: "7", title: "Evaluación y justificación de alternativas" },
+	{ id: "sec-7-1", num: "7.1", title: "Evaluación de alternativas y justificación" },
+	{ id: "sec-7-2", num: "7.2", title: "Análisis costo-beneficio y costo-efectividad" },
 ];
 
 const { sections = defaultSections } = Astro.props;
@@ -30,7 +39,7 @@ const { sections = defaultSections } = Astro.props;
 <nav id="indice" class="my-8 p-5 bg-neutral-50 rounded-xl border border-neutral-200 text-neutral-800">
 	<div class="flex items-center justify-between mb-3 pb-2 border-b border-neutral-200">
 		<span class="text-xs font-semibold uppercase tracking-wider text-neutral-700">Índice del Documento</span>
-		<span class="text-xs font-mono text-neutral-400">4 Secciones Clave</span>
+		<span class="text-xs font-mono text-neutral-400">7 Secciones Clave</span>
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs">
 		{sections.map((s) => (
