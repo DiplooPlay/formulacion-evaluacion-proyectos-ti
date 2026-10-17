@@ -470,7 +470,7 @@ import CostoEfectividadTable from '../components/CostoEfectividadTable.astro';
 			</h2>
 
 			<div class="my-6 rounded-xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs">
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 					<!-- Foto 1 -->
 					<figure class="space-y-2">
 						<div class="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 h-80 sm:h-96 flex items-center justify-center">
@@ -500,6 +500,22 @@ import CostoEfectividadTable from '../components/CostoEfectividadTable.astro';
 						<figcaption class="text-xs text-neutral-600 leading-relaxed">
 							<strong class="text-neutral-900 block font-medium">Foto 2. Bastidor de comunicaciones y cableado</strong>
 							Vista frontal del bastidor abierto, switches, organizadores y unidad de climatización.
+						</figcaption>
+					</figure>
+
+					<!-- Plano Data Center -->
+					<figure class="space-y-2 sm:col-span-2 lg:col-span-1">
+						<div class="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 h-80 sm:h-96 flex items-center justify-center p-2">
+							<img 
+								src="/evidencias/plano-data-center.png" 
+								alt="Plano de canalizaciones, cámaras CCTV y puntos de red en el Data Center" 
+								class="w-full h-full object-contain hover:scale-102 transition-transform duration-200"
+								loading="lazy"
+							/>
+						</div>
+						<figcaption class="text-xs text-neutral-600 leading-relaxed">
+							<strong class="text-neutral-900 block font-medium">Plano 1. Canalizaciones y puntos de red en Data Center</strong>
+							Distribución de bandejas eléctricas/datos, cámaras CCTV, punto de acceso Wi-Fi y bajantes en el Data Center.
 						</figcaption>
 					</figure>
 				</div>
