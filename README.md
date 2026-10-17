@@ -1,6 +1,6 @@
 # Formulación y Evaluación de Proyectos TI
 
-Diagnóstico de Brechas (Gap Analysis) y Plan de Adecuación de Infraestructura y Controles Críticos bajo ISO/IEC 27001:2022 para **Coval Servicios Financieros (Sede Perú)**.
+Adecuación de la infraestructura física y controles de acceso del nodo de red de la sede Lima bajo los estándares de la norma ISO/IEC 27001.
 
 Proyecto académico desarrollado con **Astro v7** y **Tailwind CSS v4** bajo estándares del **PMBOK**.
 
