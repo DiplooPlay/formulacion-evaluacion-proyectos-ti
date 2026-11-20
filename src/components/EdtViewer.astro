@@ -1,0 +1,437 @@
+---
+// Diagrama SVG del EDT (Estructura de Desglose del Trabajo)
+---
+
+<div class="my-6 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6 shadow-xs overflow-x-auto">
+	<div class="min-w-[1050px]">
+		<svg
+			viewBox="0 0 1340 420"
+			class="w-full h-auto block select-none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<defs>
+				<style>
+					.edt-text {
+						font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+					}
+				</style>
+			</defs>
+
+			<!-- ========================================== -->
+			<!-- LÍNEAS CONECTORAS                          -->
+			<!-- ========================================== -->
+			<g fill="none" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<!-- Tronco principal desde nodo raíz hacia barra de distribución -->
+				<path d="M 608 72 L 608 96" />
+
+				<!-- Barra horizontal principal de distribución -->
+				<path d="M 120 96 L 1177 96" />
+
+				<!-- Bajantes hacia Nivel 1 -->
+				<path d="M 120 96 L 120 116" />
+				<path d="M 354 96 L 354 116" />
+				<path d="M 608 96 L 608 116" />
+				<path d="M 926 96 L 926 116" />
+				<path d="M 1177 96 L 1177 116" />
+
+				<!-- Ramas Columna 1.3 (Confinamiento y adecuación) -->
+				<path d="M 608 166 L 608 175 L 502 175 L 502 260" />
+				<path d="M 502 204 L 518 204" />
+				<path d="M 502 260 L 518 260" />
+
+				<!-- Subramas 1.3.2 (Infraestructura activa y pasiva) -->
+				<path d="M 560 282 L 560 372" />
+				<path d="M 560 316 L 576 316" />
+				<path d="M 560 372 L 576 372" />
+
+				<!-- Ramas Columna 1.4 (Monitoreo) -->
+				<path d="M 926 166 L 926 175 L 822 175 L 822 260" />
+				<path d="M 822 204 L 838 204" />
+				<path d="M 822 260 L 838 260" />
+
+				<!-- Ramas Columna 1.5 (Gobernanza) -->
+				<path d="M 1177 166 L 1177 175 L 1058 175 L 1058 260" />
+				<path d="M 1058 204 L 1074 204" />
+				<path d="M 1058 260 L 1074 260" />
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NODO RAÍZ                                  -->
+			<!-- ========================================== -->
+			<g id="node-root">
+				<rect
+					x="388"
+					y="16"
+					width="440"
+					height="56"
+					rx="8"
+					fill="#0F172A"
+					stroke="#1E293B"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="608"
+					y="38"
+					font-size="13"
+					font-weight="700"
+					fill="#FFFFFF"
+					letter-spacing="-0.01em"
+				>
+					1. Adecuación física y control de acceso
+					<tspan x="608" dy="18" font-size="11" font-weight="500" fill="#94A3B8">
+						Cuarto de redes - Sede Lima (ISO/IEC 27001)
+					</tspan>
+				</text>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 1                                    -->
+			<!-- ========================================== -->
+			<!-- 1.1 -->
+			<g id="node-1-1">
+				<rect
+					x="20"
+					y="116"
+					width="200"
+					height="50"
+					rx="7"
+					fill="#1E3A8A"
+					stroke="#2563EB"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="120"
+					y="137"
+					font-size="11.5"
+					font-weight="600"
+					fill="#FFFFFF"
+				>
+					1.1 Gestión, permisos nocturnos
+					<tspan x="120" dy="16">y cierre del proyecto</tspan>
+				</text>
+			</g>
+
+			<!-- 1.2 -->
+			<g id="node-1-2">
+				<rect
+					x="234"
+					y="116"
+					width="240"
+					height="50"
+					rx="7"
+					fill="#1E3A8A"
+					stroke="#2563EB"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="354"
+					y="137"
+					font-size="11"
+					font-weight="600"
+					fill="#FFFFFF"
+				>
+					1.2 Cerradura digital biométrica
+					<tspan x="354" dy="16">instalada y usuarios enrolados (A.7.2)</tspan>
+				</text>
+			</g>
+
+			<!-- 1.3 -->
+			<g id="node-1-3">
+				<rect
+					x="488"
+					y="116"
+					width="240"
+					height="50"
+					rx="7"
+					fill="#1E3A8A"
+					stroke="#2563EB"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="608"
+					y="137"
+					font-size="11.5"
+					font-weight="600"
+					fill="#FFFFFF"
+				>
+					1.3 Confinamiento y adecuación
+					<tspan x="608" dy="16">de red (A.7.1)</tspan>
+				</text>
+			</g>
+
+			<!-- 1.4 -->
+			<g id="node-1-4">
+				<rect
+					x="816"
+					y="116"
+					width="220"
+					height="50"
+					rx="7"
+					fill="#1E3A8A"
+					stroke="#2563EB"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="926"
+					y="137"
+					font-size="11.5"
+					font-weight="600"
+					fill="#FFFFFF"
+				>
+					1.4 Monitoreo y control
+					<tspan x="926" dy="16">ambiental</tspan>
+				</text>
+			</g>
+
+			<!-- 1.5 -->
+			<g id="node-1-5">
+				<rect
+					x="1052"
+					y="116"
+					width="250"
+					height="50"
+					rx="7"
+					fill="#1E3A8A"
+					stroke="#2563EB"
+					stroke-width="1.5"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="1177"
+					y="137"
+					font-size="11.5"
+					font-weight="600"
+					fill="#FFFFFF"
+				>
+					1.5 Gobernanza ISO 27001
+					<tspan x="1177" dy="16">y conformidad</tspan>
+				</text>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 2                                    -->
+			<!-- ========================================== -->
+			<!-- 1.3.1 -->
+			<g id="node-1-3-1">
+				<rect
+					x="518"
+					y="182"
+					width="210"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="623"
+					y="200"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.3.1 Gabinete cerrado 42RU
+					<tspan x="623" dy="15">montado con llave</tspan>
+				</text>
+			</g>
+
+			<!-- 1.3.2 -->
+			<g id="node-1-3-2">
+				<rect
+					x="518"
+					y="238"
+					width="210"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="623"
+					y="256"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.3.2 Infraestructura activa
+					<tspan x="623" dy="15">y pasiva migrada</tspan>
+				</text>
+			</g>
+
+			<!-- 1.4.1 -->
+			<g id="node-1-4-1">
+				<rect
+					x="838"
+					y="182"
+					width="210"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="943"
+					y="200"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.4.1 Cámara IP con
+					<tspan x="943" dy="15">grabación activa</tspan>
+				</text>
+			</g>
+
+			<!-- 1.4.2 -->
+			<g id="node-1-4-2">
+				<rect
+					x="838"
+					y="238"
+					width="210"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="943"
+					y="256"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.4.2 Termohigrómetro de
+					<tspan x="943" dy="15">alerta ambiental instalado</tspan>
+				</text>
+			</g>
+
+			<!-- 1.5.1 -->
+			<g id="node-1-5-1">
+				<rect
+					x="1074"
+					y="182"
+					width="238"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="1193"
+					y="200"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.5.1 Protocolo de seguridad,
+					<tspan x="1193" dy="15">bitácora y cofre de llaves</tspan>
+				</text>
+			</g>
+
+			<!-- 1.5.2 -->
+			<g id="node-1-5-2">
+				<rect
+					x="1074"
+					y="238"
+					width="238"
+					height="44"
+					rx="6"
+					fill="#F0F7FF"
+					stroke="#60A5FA"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="1193"
+					y="256"
+					font-size="10.5"
+					font-weight="500"
+					fill="#1E3A8A"
+				>
+					1.5.2 Dossier de conformidad
+					<tspan x="1193" dy="15">validado por CISO Regional</tspan>
+				</text>
+			</g>
+
+			<!-- ========================================== -->
+			<!-- NIVEL 3                                    -->
+			<!-- ========================================== -->
+			<!-- 1.3.2.1 -->
+			<g id="node-1-3-2-1">
+				<rect
+					x="576"
+					y="294"
+					width="220"
+					height="44"
+					rx="6"
+					fill="#F0FDF4"
+					stroke="#4ADE80"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="686"
+					y="312"
+					font-size="10.5"
+					font-weight="500"
+					fill="#14532D"
+				>
+					1.3.2.1 Switches Aruba y firewall
+					<tspan x="686" dy="15">reubicados y operativos</tspan>
+				</text>
+			</g>
+
+			<!-- 1.3.2.2 -->
+			<g id="node-1-3-2-2">
+				<rect
+					x="576"
+					y="350"
+					width="220"
+					height="44"
+					rx="6"
+					fill="#F0FDF4"
+					stroke="#4ADE80"
+					stroke-width="1.2"
+				/>
+				<text
+					class="edt-text"
+					text-anchor="middle"
+					x="686"
+					y="368"
+					font-size="10.5"
+					font-weight="500"
+					fill="#14532D"
+				>
+					1.3.2.2 Cableado peinado y
+					<tspan x="686" dy="15">rotulado (Norma TIA-606)</tspan>
+				</text>
+			</g>
+		</svg>
+	</div>
+</div>

@@ -10,6 +10,9 @@ import DiagramasComponentes from '../components/DiagramasComponentes.astro';
 import ProyectosAlternativos from '../components/ProyectosAlternativos.astro';
 import CriteriosSeleccionTable from '../components/CriteriosSeleccionTable.astro';
 import CostoEfectividadTable from '../components/CostoEfectividadTable.astro';
+import EdtViewer from '../components/EdtViewer.astro';
+import ActividadesTabs from '../components/ActividadesTabs.astro';
+import GanttViewer from '../components/GanttViewer.astro';
 ---
 
 <Layout
@@ -462,11 +465,23 @@ import CostoEfectividadTable from '../components/CostoEfectividadTable.astro';
 		</section>
 
 		<!-- ========================================== -->
-		<!-- SECCIÓN 8: EVIDENCIAS                      -->
+		<!-- SECCIÓN 8: EDT                             -->
 		<!-- ========================================== -->
 		<section id="sec-8" class="my-12 scroll-mt-16">
 			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">
-				8. Evidencias
+				8. EDT
+			</h2>
+			<EdtViewer />
+			<ActividadesTabs />
+			<GanttViewer />
+		</section>
+
+		<!-- ========================================== -->
+		<!-- SECCIÓN 9: EVIDENCIAS                      -->
+		<!-- ========================================== -->
+		<section id="sec-9" class="my-12 scroll-mt-16">
+			<h2 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900 mb-6 pb-2 border-b border-neutral-200">
+				9. Evidencias
 			</h2>
 
 			<div class="my-6 rounded-xl border border-neutral-200 bg-white p-4 sm:p-5 shadow-xs space-y-6">
