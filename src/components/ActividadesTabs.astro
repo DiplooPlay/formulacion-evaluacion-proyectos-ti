@@ -1,5 +1,6 @@
 ---
 import data from '../data/actividades.json';
+import ZoomableImageModal from './ZoomableImageModal.astro';
 const { actividades, atributos, hitos } = data;
 ---
 
@@ -132,14 +133,16 @@ const { actividades, atributos, hitos } = data;
 
 	<!-- TAB 4: Diagrama de red -->
 	<div id="tab-diagrama" class="act-tab-panel hidden rounded-xl border border-neutral-200 bg-white p-3 sm:p-4 shadow-xs">
-		<div class="overflow-x-auto rounded-lg border border-neutral-150 bg-neutral-50/50 max-h-[600px] flex items-center justify-center p-2">
-			<img
-				src="/edt/diagrama-red.jpg"
-				alt="Diagrama de red de actividades"
-				class="w-auto max-w-full h-auto object-contain block mx-auto"
-				loading="lazy"
-			/>
-		</div>
+		<ZoomableImageModal
+			src="/edt/diagrama-red.jpg"
+			alt="Diagrama de red de actividades"
+			modalAlt="Diagrama de red de actividades completo"
+			ariaLabel="Ver diagrama de red completo"
+			triggerClass="group relative overflow-hidden rounded-lg border border-neutral-150 bg-neutral-50/50 hover:border-neutral-400 transition-all duration-200 cursor-pointer"
+			thumbBoxClass="relative flex items-center justify-center p-2 sm:p-3"
+			thumbImgClass="max-h-[560px] w-auto max-w-full h-auto object-contain block mx-auto opacity-95 group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-300"
+			modalImgClass="max-w-[92vw] max-h-[85vh] w-auto h-auto object-contain transition-transform duration-75 origin-center pointer-events-none select-none"
+		/>
 	</div>
 </div>
 
